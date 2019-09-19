@@ -1,0 +1,20 @@
+<h1>新增學習集</h1>
+
+<%= form_for(@setbox,url: helloword_index_path) do |form| %>
+  <div class="box">
+    <div class="setbox_field">
+      <%= form.label :title, 'title' %>
+    </div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= form_for(@card,url: helloword_index_path) do |form| %>
+  <div class="box">
+    <div class="setbox_field">
+      <%= form.label :card_word, 'word' %>
+      <%= form.label :card_def, 'def' %>
+    </div>
+    <%= form.submit %>
+  </div>
+<% end %>
