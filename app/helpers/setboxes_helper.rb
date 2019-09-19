@@ -1,0 +1,2 @@
+module SetboxesHelper
+end

@@ -1,0 +1,2 @@
+class SetboxesController < ApplicationController
+end
