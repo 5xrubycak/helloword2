@@ -1,24 +1,16 @@
 # README
+Model：User 
+欄位名稱 資料型態 說明 
+name string 姓名  
+email string 電郵
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Model：Setbox 
+欄位名稱 資料型態 說明 
+title string 學習集名稱  
+user_id integer 擁有此學習集的user編號
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Model：Card
+欄位名稱 資料型態 說明 
+card_word string 單字
+card_def string 定義
+setbox_id integer 對應此單字的set編號
