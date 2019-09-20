@@ -1,20 +1,15 @@
 <h1>新增學習集</h1>
 
-<%= form_for(@setbox,url: helloword_index_path) do |form| %>
-  <div class="box">
-    <div class="setbox_field">
-      <%= form.label :title, 'title' %>
-    </div>
-    <%= form.submit %>
+<%= simple_form_for(@setbox, url: helloword_index_path) do |f| %>
+  <%= f.input :title %>
+  <h3>Setbox</h3>
+  <div id='cards'>
+    <%= f.simple_fields_for :cards do |card| %>
+      <%= render 'card_fields', :f => card %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add card', f, :cards %>
+    </div> 
   </div>
-<% end %>
-
-<%= form_for(@card,url: helloword_index_path) do |form| %>
-  <div class="box">
-    <div class="setbox_field">
-      <%= form.label :card_word, 'word' %>
-      <%= form.label :card_def, 'def' %>
-    </div>
-    <%= form.submit %>
-  </div>
+  <%= f.submit 'Save' %>
 <% end %>
