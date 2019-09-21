@@ -1,4 +1,4 @@
-class HellowordController < ApplicationController
+class SetboxesController < ApplicationController
   def index
     @setbox = Setbox.all
   end
