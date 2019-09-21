@@ -1,0 +1,16 @@
+<%= link_to '回列表', root_path, class: 'btn btn-danger btn-xs' %>
+<hr>
+
+<%= simple_form_for(setbox) do |f| %>
+  <%= f.input :title , label: "學習集名稱" %>
+  <p>Setbox</p>
+  <div id='cards'>
+    <%= f.simple_fields_for :cards do |card| %>
+      <%= render 'card_fields', :f => card %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add card', f, :cards, class: 'btn btn-sm btn-danger' %>
+    </div> 
+  </div>
+  <%= f.submit 'Save', class: 'btn btn-success' %>
+<% end %>
