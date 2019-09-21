@@ -6,7 +6,8 @@
   <% @setbox.each do |setbox| %>
     <li>
       <%= link_to setbox.title, setbox_path(setbox) %>
-      <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success'%>
+      <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
+      <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'}  %>
     </li>
   <% end %>
 </ul>

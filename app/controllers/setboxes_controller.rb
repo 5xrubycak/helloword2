@@ -36,4 +36,10 @@ class SetboxesController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    @setbox = Setbox.find_by(id: params[:id])
+    @setbox.destroy
+    redirect_to root_path, notice: "刪除資料"
+  end
 end
