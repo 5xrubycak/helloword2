@@ -1,4 +1,6 @@
-<h1>新增學習集</h1>
+<h1>新增學習集
+<%= link_to '回列表', root_path, class: 'btn btn-danger btn-xs' %>
+</h1>
 
 <%= simple_form_for(@setbox) do |f| %>
   <%= f.input :title %>
