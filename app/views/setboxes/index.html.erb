@@ -2,3 +2,12 @@
 <%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
 </h1>
 
+<ul>
+  <% @setbox.each do |setbox| %>
+    <li>
+      <%= link_to setbox.title, setbox_path(setbox) %>
+      <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success'%>
+    </li>
+  <% end %>
+</ul>
+

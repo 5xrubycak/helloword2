@@ -17,4 +17,23 @@ class SetboxesController < ApplicationController
       render :new, notice: "error"
     end
   end
+
+  def show
+    @setbox = Setbox.find_by(id: params[:id])
+  end
+
+  def edit
+    @setbox = Setbox.find_by(id: params[:id])
+  end
+
+  def update
+    @setbox = Setbox.find_by(id: params[:id])
+    setbox_clean_params = params.require(:setbox).permit(:title, cards_attributes: [:id, :card_word, :card_def ,:_destroy])
+
+    if @setbox.update(setbox_clean_params)
+      redirect_to root_path, notice: "更新setbox成功"
+    else
+      render :edit
+    end
+  end
 end

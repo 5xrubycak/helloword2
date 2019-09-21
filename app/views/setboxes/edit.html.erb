@@ -1,0 +1,17 @@
+<h1>編輯學習集
+<%= link_to '回列表', root_path, class: 'btn btn-danger btn-xs' %>
+</h1>
+
+<%= simple_form_for(@setbox) do |f| %>
+  <%= f.input :title %>
+  <h3>Setbox</h3>
+  <div id='cards'>
+    <%= f.simple_fields_for :cards do |card| %>
+      <%= render 'card_fields', :f => card %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'add card', f, :cards %>
+    </div> 
+  </div>
+  <%= f.submit 'Save' %>
+<% end %>
