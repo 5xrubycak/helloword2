@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to "Hello Word!", root_path, class: 'navbar-brand' %>
+  <%= link_to "HelloWord", root_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,7 +13,7 @@
         </form>      
       </li>
       <li class="nav-item">
-        <%= link_to "建立", "#", class: 'nav-link' %>
+        <%= link_to "建立", new_setbox_path, class: 'nav-link' %>
       </li>
     </ul>
 
@@ -22,9 +22,6 @@
     <ul class="navbar-nav">
 
       <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "游覽他人", "#", class: 'nav-link' %>
-        </li>
         <li class="nav-item">
           <%= link_to "登出", destroy_user_session_path, class: 'nav-link', method: 'delete' %>
         </li>

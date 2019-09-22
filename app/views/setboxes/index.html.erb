@@ -1,0 +1,26 @@
+<h1>學習集列表
+<%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
+</h1>
+
+<table class="table table-hover table-sm">
+  <thead>
+    <tr>
+      <th>學習集名稱</th>
+      <th>處理</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @setbox.each do |setbox| %>
+    <tr>
+      <td>
+        <%= link_to setbox.title, setbox_path(setbox) %>
+      </td>
+      <td>
+        <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
+        <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+

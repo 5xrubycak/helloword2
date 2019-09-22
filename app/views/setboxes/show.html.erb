@@ -1,0 +1,12 @@
+<% if @setbox %>
+  <%= simple_form_for(@setbox) do |f| %>
+  <%= @setbox.title %>
+  <div id='cards'>
+    <%= f.simple_fields_for :cards do |card| %>
+      <%= render 'show_fields', :f => card %>
+    <% end %>
+  </div>
+<% end %>
+<% else %>
+  <h1>沒有這個學習集</h1>
+<% end %>
