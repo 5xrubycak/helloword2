@@ -1,4 +1,10 @@
 <div class='nested-fields'>
-  <%= f.text_field :card_word %>
-  <%= f.text_field :card_def %>
+  <div class="row">
+    <div class="col-6">
+      <%= f.object.card_word %>
+    </div>
+    <div class="col-6">
+      <%= f.object.card_def %>
+    </div>
+  </div>
 </div>
