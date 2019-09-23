@@ -6,7 +6,7 @@
   <div class="form-inputs">
     <div class="row">
       <div class="col-3"><%= f.input :name, label: '名字' %></div>
-      <div class="col-9"><%= f.input :email, required: true, autofocus: true %></div>
+      <div class="col-9"><%= f.input :email, label: '信箱', required: false, autofocus: true %></div>
     </div>
     
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
