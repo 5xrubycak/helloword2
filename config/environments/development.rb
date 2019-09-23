@@ -31,7 +31,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -64,7 +64,7 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: ENV['smtp_address'],
     port: 587,
-    domain: 'postmaster@taiwanmetal.com',
+    domain: 'postmaster@helloword.space',
     user_name: ENV['smtp_username'],
     password: ENV['smtp_password'],
     authentication: 'plain',
