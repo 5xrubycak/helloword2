@@ -8,10 +8,12 @@ Rails.application.routes.draw do
 
   # resources :setboxes , path: "helloword"
 
-  devise_scope :user do
-    # resources 'sign_in', to: 'devise/sessions#new'
-    resources :setboxes , path: "helloword/users"
+  resources :setboxes , path: "helloword" do
+    collection do
+      get '/home' ,to: 'setboxes#home'
+    end
+    # 使用者登入首頁
   end
-  
+
   root 'setboxes#index'
 end
