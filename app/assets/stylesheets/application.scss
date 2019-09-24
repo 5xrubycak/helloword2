@@ -15,3 +15,45 @@
  */
 
  @import "bootstrap";
+
+.signinoutbg {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+.form-control{
+  border-radius: 10px;
+}
+
+.card-signin {
+  border: 0;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.card-body .btnfbgl {
+  font-size: 80%;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.google_oauth2 {
+  color: white;
+  background-color: #ea4335;
+}
+
+.facebook {
+  color: white;
+  background-color: #3b5998;
+}

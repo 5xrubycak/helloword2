@@ -1,7 +1,8 @@
 <% if @setbox %>
   <%= simple_form_for(@setbox) do |f| %>
-  <%= @setbox.title %>
+  <h1><%= @setbox.title %></h1>
   <div id='cards'>
+    <h2>本學習集中的詞語（ 數量count ）</h2>
     <%= f.simple_fields_for :cards do |card| %>
       <%= render 'show_fields', :f => card %>
     <% end %>
