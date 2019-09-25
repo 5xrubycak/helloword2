@@ -1,26 +1,51 @@
-<h1>學習集列表
-<%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
-</h1>
+<div class="container">
+  <h1>學習集列表
+  <%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
+  </h1>
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <th>學習集名稱</th>
+        <th>處理</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @setbox.each do |setbox| %>
+      <tr>
+        <td>
+          <%= link_to setbox.title, setbox_path(setbox) %>
+        </td>
+        <td>
+          <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
+          <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
+          
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            分享
+          </button>
 
-<table class="table table-hover table-sm">
-  <thead>
-    <tr>
-      <th>學習集名稱</th>
-      <th>處理</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @setbox.each do |setbox| %>
-    <tr>
-      <td>
-        <%= link_to setbox.title, setbox_path(setbox) %>
-      </td>
-      <td>
-        <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
-        <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalCenterTitle">分享此學習集</h2>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-9"><%= 'localhost:3000' + setbox_path(setbox) %></div>
+                    <div class="col-3"> <button type="button" class="btn btn-warning">複製連結</button></div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
