@@ -23,6 +23,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'faker', '~> 2.4'
+gem 'hirb-unicode'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
