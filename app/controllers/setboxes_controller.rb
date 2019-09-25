@@ -45,6 +45,10 @@ class SetboxesController < ApplicationController
     @setbox = current_user.setboxes
   end
 
+  def search
+    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search])
+  end
+
   private
 
   def setbox_params
