@@ -15,7 +15,7 @@ class SetboxesController < ApplicationController
     @setbox = current_user.setboxes.build(setbox_params)
     
     if @setbox.save
-      redirect_to root_path, notice: "新增setbox成功" 
+      redirect_to home_setboxes_path, notice: "新增setbox成功" 
     else
       render :new, notice: "error"
     end
