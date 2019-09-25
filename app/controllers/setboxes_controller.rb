@@ -15,7 +15,7 @@ class SetboxesController < ApplicationController
     @setbox = current_user.setboxes.build(setbox_params)
     
     if @setbox.save
-      redirect_to root_path, notice: "新增setbox成功" 
+      redirect_to home_setboxes_path, notice: "新增setbox成功" 
     else
       render :new, notice: "error"
     end
@@ -29,7 +29,7 @@ class SetboxesController < ApplicationController
 
   def update
     if @setbox.update(setbox_params)
-      redirect_to root_path, notice: "更新setbox成功"
+      redirect_to home_setboxes_path, notice: "更新setbox成功"
     else
       render :edit
     end
@@ -38,7 +38,11 @@ class SetboxesController < ApplicationController
   def destroy
     @setbox = Setbox.find_by(id: params[:id])
     @setbox.destroy
-    redirect_to root_path, notice: "刪除資料"
+    redirect_to home_setboxes_path, notice: "刪除資料"
+  end
+
+  def home
+    @setbox = current_user.setboxes
   end
 
   private

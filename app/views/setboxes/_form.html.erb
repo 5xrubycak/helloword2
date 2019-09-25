@@ -1,4 +1,4 @@
-<%= simple_form_for(setbox) do |f| %>
+<%= simple_form_for @setbox do |f| %>
   <%= f.input :title , label: "學習集名稱", placeholder: '科目，章節，單元' %>
   <p>Setbox</p>
   <div id='cards'>
@@ -9,5 +9,5 @@
       <%= link_to_add_association 'add card', f, :cards, class: 'btn btn-sm btn-danger' %>
     </div> 
   </div>
-  <%= f.submit 'Save', class: 'btn btn-success' %>
+  <%= f.button :submit, 'Save', class: 'btn btn-success' %>
 <% end %>
