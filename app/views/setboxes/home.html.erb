@@ -1,4 +1,5 @@
-<div class="container">
+<script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+
   <h1>學習集列表
   <%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
   </h1>
@@ -19,12 +20,10 @@
           <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
           <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
           
-          <!-- Button trigger modal -->
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
             分享
           </button>
 
-          <!-- Modal -->
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -33,8 +32,15 @@
                 </div>
                 <div class="modal-body">
                   <div class="row">
-                    <div class="col-9"><%= 'localhost:3000' + setbox_path(setbox) %></div>
-                    <div class="col-3"> <button type="button" class="btn btn-warning">複製連結</button></div>
+                    <div class="col-9">
+                      <input id="text" type="text" value="<%= 'localhost:3000' + setbox_path(setbox) %>" style="height: 100%; width:100%">
+                    </div>
+                    <div class="col-3"> 
+                      <button type="button" class="btn btn-warning">複製連結</button>
+                    </div>
+                  </div>
+                  <div class="row d-flex mt-4 justify-content-center align-items-center">
+                    <div id="qrcode"></div>
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -49,3 +55,29 @@
       <% end %>
     </tbody>
   </table>
+
+  <%# QRCODE JAVASCRIPT %>
+
+  <script type="text/javascript">
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+    width : 250,
+    height : 250
+  });
+
+  function makeCode () {		
+    var elText = document.getElementById("text");
+    qrcode.makeCode(elText.value);
+  }
+
+  makeCode();
+
+  $("#text").
+    on("blur", function () {
+      makeCode();
+    }).
+    on("keydown", function (e) {
+      if (e.keyCode == 13) {
+        makeCode();
+      }
+    });
+  </script>
