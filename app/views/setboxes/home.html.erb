@@ -33,10 +33,10 @@
                 <div class="modal-body">
                   <div class="row">
                     <div class="col-9">
-                      <input id="text" type="text" value="<%= 'localhost:3000' + setbox_path(setbox) %>" style="height: 100%; width:100%">
+                      <input id="urltext" type="text" value="<%= 'localhost:3000' + setbox_path(setbox) %>" style="height: 100%; width:100% ">
                     </div>
                     <div class="col-3"> 
-                      <button type="button" class="btn btn-warning">複製連結</button>
+                      <button onclick="urlFunction()"type="button" class="btn btn-warning">複製連結</button>
                     </div>
                   </div>
                   <div class="row d-flex mt-4 justify-content-center align-items-center">
@@ -65,13 +65,13 @@
   });
 
   function makeCode () {		
-    var elText = document.getElementById("text");
+    var elText = document.getElementById("urltext");
     qrcode.makeCode(elText.value);
   }
 
   makeCode();
 
-  $("#text").
+  $("#urltext").
     on("blur", function () {
       makeCode();
     }).
