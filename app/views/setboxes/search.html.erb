@@ -1,0 +1,21 @@
+<%= form_tag(search_setboxes_path, :method => "get") do %>
+  <%= text_field_tag :search %> 
+  <%= submit_tag "搜尋單字" ,:name => nil ,class: "btn btn-success btn-xs"%> 
+<% end %> 
+
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>學習集名稱</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @setboxes.each do |setbox| %>
+    <tr>
+      <td><%= link_to setbox.title, setbox_path(setbox) %></td>
+    </tr>
+    <% end %>
+    </tbody>
+</table>

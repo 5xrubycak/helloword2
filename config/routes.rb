@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :setboxes , path: "helloword" do
     collection do
       get '/home' ,to: 'setboxes#home'
+      get '/search', to: 'setboxes#search'
     end
     # 使用者登入首頁
   end
