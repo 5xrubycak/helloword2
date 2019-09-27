@@ -1,12 +1,12 @@
 <div class='nested-fields'>
   <div class="row">
-    <div class="col-5">
+    <div class="col-6">
       <%= f.input :card_word, label: false, placeholder: '單詞：apple' %>
     </div>
-    <div class="col-6">
+    <div class="col-5">
       <%= f.input :card_def, label: false, placeholder: '定義：蘋果' %>
     </div>
-    <div class="col-1">
+    <div class="col-1 p-1">
       <%= link_to_remove_association "X", f, class: 'btn btn-sm btn-danger' %>
     </div>
   </div>
