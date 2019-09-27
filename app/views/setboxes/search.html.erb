@@ -1,21 +1,26 @@
-<%= form_tag(search_setboxes_path, :method => "get") do %>
-  <%= text_field_tag :search %> 
-  <%= submit_tag "搜尋單字" ,:name => nil ,class: "btn btn-success btn-xs"%> 
-<% end %> 
+<div class="container-fluid">
+  <div class="row">
+    <div class="main-header-content m-auto text-center">
+      <%= form_tag(search_setboxes_path, :method => "get") do %>
+        <%= text_field_tag :search %> 
+        <%= submit_tag "搜尋單字" ,:name => nil ,class: "btn btn-success btn-xs"%> 
+      <% end %> 
+    </div>
+  </div>
+</div>
 
 
 
-<table class="table">
-  <thead>
-    <tr>
-      <td>學習集名稱</td>
-    </tr>
-  </thead>
-  <tbody>
-    <% @setboxes.each do |setbox| %>
-    <tr>
-      <td><%= link_to setbox.title, setbox_path(setbox) %></td>
-    </tr>
-    <% end %>
-    </tbody>
-</table>
+<div class="card-deck ml-3 mr-3 mt-5">
+  <% @setboxes.each do |setbox| %>
+  <div class="card text-white bg-info mb-3" style="min-width: 650px; max-width: 651px;">
+    <div class="card-body">
+      <h5 class="card-title">學習集：<%= link_to setbox.title, setbox_path(setbox) %></h5>
+      <p class="card-text">作者：<%= setbox.user.name %></p>
+      <% setbox.cards.each do |card| %>
+        <p class="card-text"><%= "單字： #{card.card_word}" if params[:search].present? %></p>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>
