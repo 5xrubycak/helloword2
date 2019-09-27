@@ -1,9 +1,10 @@
 <div class='nested-fields'>
   <div class="row">
-    <div class="col-6">
+    <%# 將要取值的字用object.id(primary key)綁住跟 "發音按鈕" 呼應 %>
+    <div class="col-6" id="english-<%= f.object.id %>">
       <%= f.object.card_word %>
     </div>
-    <div class="col-6">
+    <div class="col-6" id="chinese-<%= f.object.id %>">
       <%= f.object.card_def %>
     </div>
   </div>

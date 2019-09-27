@@ -1,5 +1,6 @@
 <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
-
+<%# 將此頁面用id=home綁住，是為了在show頁面時可以正常呈現 %>
+<div id='home'>  
   <h1>學習集列表
   <%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
   </h1>
@@ -14,7 +15,8 @@
       <% @setbox.each do |setbox| %>
       <tr>
         <td>
-          <%= link_to setbox.title, setbox_path(setbox) %>
+          <%# 這裡加 class:'setbox' 是為了要連結到 bindSetboxButton()  %>
+          <%= link_to setbox.title, setbox_path(setbox), class:'setbox' %>
         </td>
         <td>
           <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
@@ -23,7 +25,7 @@
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
             分享
           </button>
-
+  
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
@@ -81,3 +83,4 @@
       }
     });
   </script>
+</div>
