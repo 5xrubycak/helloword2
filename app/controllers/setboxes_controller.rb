@@ -5,6 +5,7 @@ class SetboxesController < ApplicationController
 
   def index
     @setbox = Setbox.all
+    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(8)
   end
 
   def new
