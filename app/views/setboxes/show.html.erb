@@ -63,6 +63,8 @@
         <h2>本學習集中的詞語（ 數量count ）</h2>
         <%= f.simple_fields_for :cards do |card| %>
         <%= render 'show_fields', :f => card %>
+        <button type="button" class="english" value=<%= card.object.id %>>Play</button>
+        <button type="button" class="chinese" value=<%= card.object.id %>>播放</button>
         <% end %>
       </div>
       <% end %>

@@ -18,6 +18,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require myjs.js
 //= require_tree .
 
 // 分享功能的JS
