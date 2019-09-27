@@ -1,26 +1,83 @@
-<h1>學習集列表
-<%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
-</h1>
+<script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
 
-<table class="table table-hover table-sm">
-  <thead>
-    <tr>
-      <th>學習集名稱</th>
-      <th>處理</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @setbox.each do |setbox| %>
-    <tr>
-      <td>
-        <%= link_to setbox.title, setbox_path(setbox) %>
-      </td>
-      <td>
-        <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
-        <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+  <h1>學習集列表
+  <%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
+  </h1>
+  <table class="table table-hover table-sm">
+    <thead>
+      <tr>
+        <th>學習集名稱</th>
+        <th>處理</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @setbox.each do |setbox| %>
+      <tr>
+        <td>
+          <%= link_to setbox.title, setbox_path(setbox) %>
+        </td>
+        <td>
+          <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
+          <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
+          
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+            分享
+          </button>
 
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h2 class="modal-title" id="exampleModalCenterTitle">分享此學習集</h2>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-9">
+                      <input id="urltext" type="text" value="<%= 'localhost:3000' + setbox_path(setbox) %>" style="height: 100%; width:100% ">
+                    </div>
+                    <div class="col-3"> 
+                      <button onclick="urlFunction()"type="button" class="btn btn-warning">複製連結</button>
+                    </div>
+                  </div>
+                  <div class="row d-flex mt-4 justify-content-center align-items-center">
+                    <div id="qrcode"></div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%# QRCODE JAVASCRIPT %>
+
+  <script type="text/javascript">
+  var qrcode = new QRCode(document.getElementById("qrcode"), {
+    width : 250,
+    height : 250
+  });
+
+  function makeCode () {		
+    var elText = document.getElementById("urltext");
+    qrcode.makeCode(elText.value);
+  }
+
+  makeCode();
+
+  $("#urltext").
+    on("blur", function () {
+      makeCode();
+    }).
+    on("keydown", function (e) {
+      if (e.keyCode == 13) {
+        makeCode();
+      }
+    });
+  </script>
