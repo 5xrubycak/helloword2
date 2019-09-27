@@ -1,1 +1,18 @@
-<h1>首頁</h1>
+
+<div class="jumbotron">
+  <h1 class="display-4">Hello, word!</h1>
+  <p class="lead">你是忘記了，還是記不起來？</p>
+  <hr class="my-4">
+  <p>善用零碎時間，記住任何你想記住的事物。</p>
+</div>
+
+<div class="card-deck ml-3 mr-3 mt-5">
+  <% @setboxes.each do |setbox| %>
+  <div class="card text-white bg-info mb-3" style="min-width: 650px; max-width: 651px;">
+    <div class="card-body">
+      <h5 class="card-title">學習集：<%= link_to setbox.title, setbox_path(setbox) %></h5>
+      <p class="card-text">作者：<%= setbox.user.name %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
