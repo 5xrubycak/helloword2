@@ -1,36 +1,54 @@
-<h2>修改個人資料</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
+<div class="editbg">
+  <div class="container">
     <div class="row">
-      <div class="col-3"><%= f.input :name, label: '名字' %></div>
-      <div class="col-9"><%= f.input :email, label: '信箱', required: false, autofocus: true %></div>
-    </div>
-    
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center ">修改個人資料</h5>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= f.error_notification %>
+              
+              <div class="form-inputs">
+                <div class="row">
+                  <div class="col"><%= f.input :name, label: '名字' %></div>
+                </div>
+                <div class="row">
+                  <div class="col"><%= f.input :email, label: '信箱', required: false, autofocus: true %></div>
+                </div>
+                
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
 
-    <div class="row">
-      <div class="col">
-        <%= f.input :password,
-                    required: false,
-                    label: '密碼',
-                    input_html: { autocomplete: "new-password" } %>
-      </div>
-      <div class="col">
-        <%= f.input :password_confirmation,
-                    required: false,
-                    label: '密碼確認',
-                    input_html: { autocomplete: "new-password" } %>
+                <div class="row">
+                  <div class="col">
+                    <%= f.input :password,
+                                required: false,
+                                label: '密碼',
+                                input_html: { autocomplete: "new-password" } %>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <%= f.input :password_confirmation,
+                                required: false,
+                                label: '密碼確認',
+                                input_html: { autocomplete: "new-password" } %>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn btn-lg btn-success btn-block rounded-pill">
+                <div class="form-actions">
+                  <%= f.button :submit, "Update", class:'text-light font-weight-bold' %>
+                </div>
+              </button>
+            <% end %>
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update", class:'btn btn-lg btn-success' %>
-  </div>
-<% end %>
+</div>
 
