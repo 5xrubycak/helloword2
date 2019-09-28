@@ -5,7 +5,7 @@ class SetboxesController < ApplicationController
 
   def index
     @setbox = Setbox.all
-    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(8)
+    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(9)
   end
 
   def new
@@ -47,7 +47,7 @@ class SetboxesController < ApplicationController
   end
 
   def search
-    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(8)
+    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(9)
   end
 
   private
