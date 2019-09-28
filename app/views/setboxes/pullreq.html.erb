@@ -1,0 +1,59 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    
+    <div class="col-6">
+      <table class="table">
+        <thead>
+          <% @setboxes.each do |setbox| %>
+          <tr>
+            <td>建立新學習集：<%= link_to setbox.title, setbox_path(setbox) %></td>
+          </tr>
+          <tr>
+            <td>單字</td>
+            <td>定義</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% setbox.cards.each do |card| %>
+          <tr>
+            <td><%= card.card_word %></td>
+            <td><%= card.card_def %></td>
+          <% end %>
+         </tr>
+         <% end %>
+        </tbody>
+      </table> 
+    </div>
+
+    <div class="col-6 border border-dark">
+      <table class="table border-top-0">
+        <thead>
+          <% @setboxes.each do |setbox| %>
+          <tr>
+            <td>建立新學習集：<%= link_to setbox.title, setbox_path(setbox) %></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>單字</td>
+            <td>定義</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% setbox.cards.each do |card| %>
+          <tr>
+            <td><%= card.card_word %></td>
+            <td><%= card.card_def %></td>
+          <% end %>
+         </tr>
+         <% end %>
+        </tbody>
+      </table> 
+    </div>
+  </div>
+</div>
+
+<center><%= link_to "CLONE", "#", class:'btn btn-xs btn-secondary mr-3' %>
+<%= link_to "MERGE", "#", class:'btn btn-xs btn-secondary' %></center>
+
+
+

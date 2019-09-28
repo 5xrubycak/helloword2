@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     collection do
       get '/home' ,to: 'setboxes#home'
       get '/search', to: 'setboxes#search'
+      get '/pullreq', to: 'setboxes#pullreq'
     end
     # 使用者登入首頁
   end
