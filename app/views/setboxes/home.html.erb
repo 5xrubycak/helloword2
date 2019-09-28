@@ -1,62 +1,66 @@
 <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
 <%# 將此頁面用id=home綁住，是為了在show頁面時可以正常呈現 %>
-<div id='home'>  
-  <h1>學習集列表
-  <%= link_to "新增學習集", new_setbox_path, class:'btn btn-xs btn-primary'%>
-  </h1>
-  <table class="table table-hover table-sm">
-    <thead>
-      <tr>
-        <th>學習集名稱</th>
-        <th>處理</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @setbox.each do |setbox| %>
-      <tr>
-        <td>
-          <%# 這裡加 class:'setbox' 是為了要連結到 bindSetboxButton()  %>
-          <%= link_to setbox.title, setbox_path(setbox), class:'setbox' %>
-        </td>
-        <td>
-          <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
-          <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
-          
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-            分享
-          </button>
-  
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h2 class="modal-title" id="exampleModalCenterTitle">分享此學習集</h2>
-                </div>
-                <div class="modal-body">
-                  <div class="row">
-                    <div class="col-9">
-                      <input id="urltext" type="text" value="<%= 'localhost:3000' + setbox_path(setbox) %>" style="height: 100%; width:100% ">
+<div class="container">
+  <div class="d-flex justify-content-between py-4">
+    <h1>學習集列表</h1>
+    <%= link_to "新增學習集", new_setbox_path, class: 'btn btn-primary btn-sm py-3 px-4' %>
+  </div>
+    <div id='home'>
+    <table class="table table-hover table-sm">
+      <thead>
+        <tr>
+          <th>學習集名稱</th>
+          <th>處理</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @setbox.each do |setbox| %>
+        <tr>
+          <td>
+            <%# 這裡加 class:'setbox' 是為了要連結到 bindSetboxButton()  %>
+            <%= link_to setbox.title, setbox_path(setbox), class:'setbox' %>
+          </td>
+          <td>
+            <%= link_to "編輯", edit_setbox_path(setbox), class:'btn btn-xs  btn-success' %>
+            <%= link_to "刪除", setbox_path(setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
+            
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+              分享
+            </button>
+    
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalCenterTitle">分享此學習集</h2>
+                  </div>
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-9">
+                        <input id="urltext" type="text" value="<%= 'localhost:3000' + setbox_path(setbox) %>" style="height: 100%; width:100% ">
+                      </div>
+                      <div class="col-3"> 
+                        <button onclick="urlFunction()"type="button" class="btn btn-warning">複製連結</button>
+                      </div>
                     </div>
-                    <div class="col-3"> 
-                      <button onclick="urlFunction()"type="button" class="btn btn-warning">複製連結</button>
+                    <div class="row d-flex mt-4 justify-content-center align-items-center">
+                      <div id="qrcode"></div>
                     </div>
                   </div>
-                  <div class="row d-flex mt-4 justify-content-center align-items-center">
-                    <div id="qrcode"></div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                   </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
               </div>
             </div>
-          </div>
 
-        </td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  </div>
 
   <%# QRCODE JAVASCRIPT %>
 
