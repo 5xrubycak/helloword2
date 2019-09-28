@@ -1,6 +1,6 @@
 class SetboxesController < ApplicationController
 
-  before_action :find_setbox, only: [:show, :edit, :update]
+  before_action :find_setbox, only: [:show, :edit, :update, :pullreq]
   before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -48,6 +48,10 @@ class SetboxesController < ApplicationController
 
   def search
     @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(8)
+  end
+
+  def pullreq
+    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(1)
   end
 
   private
