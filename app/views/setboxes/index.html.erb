@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div class="bg-white">
+<div class="bg-white m-5">
   <div class="container">
     <div class="card-deck">
       <% @setboxes.each do |setbox| %>
@@ -29,5 +29,22 @@
         </div>
       <% end %>
     </div>
+  </div>
+</div>
+
+<div class="search bg-light p-5">
+  <div class="container text-center">
+    <%= form_tag(search_setboxes_path, :method => "get") do %>
+      <%= text_field_tag :search, 
+          nil, 
+          class: "form-control", 
+          placeholder: "搜尋學習集", 
+          style: "display:inline-block;width:75%;" 
+      %> 
+      <%= submit_tag "搜尋",
+          :name => nil,
+          class: "btn btn-outline-secondary" 
+      %> 
+    <% end %> 
   </div>
 </div>
