@@ -15,18 +15,19 @@
  */
 
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Roboto:400,700i&display=swap');
+
+ body,html {
+  font-family: 'Roboto', sans-serif;
+ }
 
 .signinoutbg,.editbg {
-  background: #007bff;
-  background: linear-gradient(to right, #0062E6, #33AEFF);
+  background: #F8F9FA;
+  // background: linear-gradient(to right, #ddd, #fff);
   height: 100vh;
 }
 
-.form-control{
-  // border-radius: 10px;
-}
-
-.card-signin {
+.card-signin,.cardshadow {
   border: 0;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
