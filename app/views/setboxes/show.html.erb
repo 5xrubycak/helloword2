@@ -1,13 +1,17 @@
+<%# QRCODE JAVASCRIPT %>
+  <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+<%# QRCODE JAVASCRIPT %>
+
 <div class="container mt-5 mb-4">
   <div class="row">
     
     <div class="col-3 text-center">
       <h5>測驗：</h5> 
       <div class="mt-3 mb-3">
-        <button type="button" class="btn btn-success">1. 筆試</button>
+      <%= link_to "1. 筆試", "#", class:'btn btn-xs btn-success' %>
       </div>
       <div>
-        <button type="button" class="btn btn-success">2. 選擇</button>
+        <%= link_to "2. 選擇", "#", class:'btn btn-xs btn-success' %>
       </div>
     </div>
     
@@ -37,40 +41,98 @@
     
     <div class="col-3 text-center">
       <div class="mb-3">
-        <button type="button" class="btn btn-secondary">分享</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          分享
+        </button>
+
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalCenterTitle">分享此學習集</h2>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-9">
+                    <input id="urltext" type="text" value="<%= 'localhost:3000' + setbox_path(@setbox) %>" style="height: 100%; width:100% ">
+                  </div>
+                  <div class="col-3"> 
+                    <button onclick="urlFunction()"type="button" class="btn btn-warning">複製連結</button>
+                  </div>
+                </div>
+                <div class="row d-flex mt-4 justify-content-center align-items-center">
+                  <div id="qrcode"></div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= link_to "刪除", setbox_path(@setbox), class:'btn btn-xs  btn-danger', method:'delete',data: {confirm:'確定嗎'} %>
       </div>
       <div class="mb-3">
-        <button type="button" class="btn btn-secondary">刪除</button>
-      </div>
-      <div class="mb-3">
-        <button type="button" class="btn btn-secondary">ＰＲ</button>
+        <%= link_to "ＰＲ", pullreq_setboxes_path, class:'btn btn-xs btn-primary' %>
       </div>
       <div>
-        <button type="button" class="btn btn-secondary">複製</button>
+        <%= link_to "複製", "#", class:'btn btn-xs btn-primary' %>
       </div>
     </div>
 
   </div>
 </div>
 
-<div class="container">
+<div class="container mb-3">
   <div class="row">
     <div class="col-12">
       <% if @setbox %>
-      <%= simple_form_for(@setbox) do |f| %>
-      <h1>學習集名稱：<%= @setbox.title %></h1>
-      <div id='cards'>
-        <h2>本學習集中的詞語（ 數量count ）</h2>
-        <%= f.simple_fields_for :cards do |card| %>
-        <%= render 'show_fields', :f => card %>
-        <button type="button" class="english" value=<%= card.object.id %>>Play</button>
-        <button type="button" class="chinese" value=<%= card.object.id %>>播放</button>
+        <%= simple_form_for(@setbox) do |f| %>
+          <h1>學習集名稱：<%= @setbox.title %></h1>
+          <div id='cards'>
+            <h3>本學習集中的詞語（ 數量count ）</h3>
+            <%= f.simple_fields_for :cards do |card| %>
+              <%= render 'show_fields', :f => card %>
+              <button type="button" class="english" value=<%= card.object.id %>>Play</button>
+              <button type="button" class="chinese" value=<%= card.object.id %>>播放</button>
+            <% end %>
+          </div>
         <% end %>
-      </div>
-      <% end %>
       <% else %>
-      <h1>404</h1>
+        <h1> 404 </h1>
       <% end %>
     </div>
+
   </div>
 </div>
+
+<div align="center"><%= link_to "修改單詞卡", "#", class:'btn btn-xs btn-secondary' %></div>
+
+<%# QRCODE JAVASCRIPT %>
+  <script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+      width : 250,
+      height : 250
+    });
+
+    function makeCode () {		
+      var elText = document.getElementById("urltext");
+      qrcode.makeCode(elText.value);
+    }
+
+    makeCode();
+
+    $("#urltext").
+      on("blur", function () {
+        makeCode();
+      }).
+      on("keydown", function (e) {
+        if (e.keyCode == 13) {
+          makeCode();
+        }
+      });
+  </script>
+<%# QRCODE JAVASCRIPT %>

@@ -1,5 +1,6 @@
-<script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+
 <%# 將此頁面用id=home綁住，是為了在show頁面時可以正常呈現 %>
+
 <div class="container">
   <div class="d-flex justify-content-between py-4">
     <h1>學習集列表</h1>
@@ -62,29 +63,4 @@
   </div>
   </div>
 
-  <%# QRCODE JAVASCRIPT %>
-
-  <script type="text/javascript">
-  var qrcode = new QRCode(document.getElementById("qrcode"), {
-    width : 250,
-    height : 250
-  });
-
-  function makeCode () {		
-    var elText = document.getElementById("urltext");
-    qrcode.makeCode(elText.value);
-  }
-
-  makeCode();
-
-  $("#urltext").
-    on("blur", function () {
-      makeCode();
-    }).
-    on("keydown", function (e) {
-      if (e.keyCode == 13) {
-        makeCode();
-      }
-    });
-  </script>
 </div>
