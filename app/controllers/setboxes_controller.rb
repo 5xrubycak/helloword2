@@ -36,6 +36,27 @@ class SetboxesController < ApplicationController
     end
   end
 
+  def copy
+    @setbox = Setbox.find_by(id: params[:id])
+    # dup_setbox=Setbox.find(6).dup
+    # current_user.id
+    @dup_setbox = @setbox.dup
+    @dup_setbox.save
+    @setbox.cards.each do |card|
+    # dup_card=Card.find(71).dup
+    dup_card = card.dup
+    # dup_card.update(setbox_id:10)
+    dup_card.setbox_id = Setbox.last.id #也是 Setbox.last.id
+    dup_card.save
+    # debugger
+    @dup_setbox.user_id = current_user.id
+    @dup_setbox.save
+    # debugger
+    end
+    
+    redirect_to home_setboxes_path, notice: "複製 #{@setbox.title}成功"
+  end
+  
   def destroy
     @setbox = Setbox.find_by(id: params[:id])
     @setbox.destroy
