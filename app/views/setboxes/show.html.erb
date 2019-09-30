@@ -5,9 +5,14 @@
 <div class="container">
   <div class="d-flex justify-content-between py-4">
     <h1> 學習集名稱：<%= @setbox.title %> </h1>
-      <button type="button" class="btn btn-primary btn-sm py-3 px-4 h1" data-toggle="modal" data-target="#exampleModalCenter">
-        分享
-      </button>
+      <div>
+        <button type="button" class="btn btn-primary btn-sm py-3 px-4 h1" data-toggle="modal" data-target="#exampleModalCenter">
+          分享
+        </button>
+
+        <%= link_to "刪除", setbox_path(@setbox), method:'delete', data: {confirm:'確定嗎'}, class: "btn btn-danger btn-sm py-3 px-4 h1" %>
+      </div>
+
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
@@ -37,24 +42,18 @@
 
   <div class="row">
     <div class="col-2 text-center">
-      <span>測驗</span> 
-      <div> 
-        <%= link_to "筆試", "#" %> 
-      </div>
-      <div> 
-        <%= link_to "選擇", "#" %> 
-      </div>
-      <div>
-        <%= link_to "刪除", setbox_path(@setbox), method:'delete', data: {confirm:'確定嗎'} %>
-      </div>
-      <div>
-        <%= link_to "ＰＲ", pullreq_setboxes_path %>
-      </div>
-      <div>
-        <%= link_to "複製", "#" %>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+          測驗
+        </a>
+        <%= link_to "筆試", "#", class: "list-group-item list-group-item-action" %>
+        <%= link_to "選擇", "#", class: "list-group-item list-group-item-action" %>
+        <%= link_to "複製", "#", class: "list-group-item list-group-item-action" %>
+        <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action" %>
       </div>
     </div>
-    <div class="col-6">
+
+    <div class="col-6 ml-5">
       <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner cardshadow">
           <div class="carousel-item active">
@@ -88,8 +87,9 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    </div>
+    </div> 
   </div>
+  <hr class="col-12 mt-5">
 </div>
 
 <div class="container my-5">
@@ -97,7 +97,7 @@
     <div class="col-12">
       <%= simple_form_for(@setbox) do |f| %>
         <div id='cards'>
-          <h3>本學習集中的詞語（ 數量count ）</h3>
+          <h3>本學習集中的詞語 (<%= @setbox.cards.count %>) </h3>
           <%= f.simple_fields_for :cards do |card| %>
             <%= render 'show_fields', :f => card %>
             <button type="button" class="english" value=<%= card.object.id %>>Play</button>
