@@ -59,3 +59,9 @@
   color: white;
   background-color: #3b5998;
 }
+
+// carousel 顏色
+.carousel-control-next,
+.carousel-control-prev {
+    filter: invert(100%);
+}
