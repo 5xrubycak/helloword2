@@ -14,6 +14,9 @@ Rails.application.routes.draw do
       get '/search', to: 'setboxes#search'
       get '/pullreq', to: 'setboxes#pullreq'
     end
+    member do
+      post :copy
+    end
     # 使用者登入首頁
   end
 
