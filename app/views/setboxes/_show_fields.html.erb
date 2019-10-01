@@ -1,10 +1,28 @@
 <div class='nested-fields'>
-  <div class="row">
-    <div class="col-6" id="english-<%= f.object.id %>">
-      <li class="list-group-item mt-3"><%= f.object.card_word %></li>
+  <div class="row d-flex align-items-center">
+    <div class="col-5" id="english-<%= f.object.id %>">
+      <li class="list-group-item m-2 ">
+        <%= f.object.card_word %>
+      </li> 
     </div>
-    <div class="col-6" id="chinese-<%= f.object.id %>">
-      <li class="list-group-item mt-3"><%= f.object.card_def %></li>
+    <div class="col-1">
+      <button type="button" 
+              class="english btn btn-link border border-dark" 
+              value=<%= f.object.id %>>
+      <i class="fas fa-play"></i>
+      </button>
+    </div>
+    <div class="col-5" id="chinese-<%= f.object.id %>">
+      <li class="list-group-item m-2 ">
+        <%= f.object.card_def %>
+      </li>
+    </div>
+    <div class="col-1">
+      <button type="button" 
+              class="chinese btn btn-link border border-dark" 
+              value=<%= f.object.id %>>
+      <i class="fas fa-play"></i>
+      </button>
     </div>
   </div>
 </div>

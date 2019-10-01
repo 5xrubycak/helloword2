@@ -19,7 +19,7 @@
 
  body,html {
   font-family: 'Roboto', sans-serif;
- }
+ } 
 
 .signinoutbg,.editbg {
   background: #F8F9FA;
@@ -64,4 +64,9 @@
 .carousel-control-next,
 .carousel-control-prev {
     filter: invert(100%);
+}
+
+// bg-gray
+.bg-gray{
+  background-color: #F0F0F0;
 }

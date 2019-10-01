@@ -59,21 +59,35 @@
           <div class="carousel-item active">
             <div class="card p-5">
               <div class="card-body p-5 text-center">
-                <h1> 11 </h1>
+                <h1> <%= @setbox.cards.sample.card_word %> </h1>
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card p-5">
               <div class="card-body p-5 text-center">
-                <h1>22</h1>
+                <h1> <%= @setbox.cards.sample.card_word %> </h1>
               </div>
             </div>
           </div>
           <div class="carousel-item">
             <div class="card p-5">
               <div class="card-body p-5 text-center">
-                <h1>33</h1>
+                <h1> <%= @setbox.cards.sample.card_word %> </h1>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card p-5">
+              <div class="card-body p-5 text-center">
+                <h1> <%= @setbox.cards.sample.card_word %> </h1>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card p-5">
+              <div class="card-body p-5 text-center">
+                <h1> <%= @setbox.cards.sample.card_word %> </h1>
               </div>
             </div>
           </div>
@@ -92,25 +106,25 @@
   <hr class="col-12 mt-5">
 </div>
 
-<div class="container my-5">
-  <div class="row">
-    <div class="col-12">
-      <%= simple_form_for(@setbox) do |f| %>
-        <div id='cards'>
-          <h3>本學習集中的詞語 (<%= @setbox.cards.count %>) </h3>
-          <%= f.simple_fields_for :cards do |card| %>
-            <%= render 'show_fields', :f => card %>
-            <button type="button" class="english" value=<%= card.object.id %>>Play</button>
-            <button type="button" class="chinese" value=<%= card.object.id %>>播放</button>
-          <% end %>
-        </div>
-      <% end %>
-    </div>
+<div class="bg-gray">
+  <div class="container my-5">
+    <div class="row">
+      <div class="col-12">
+        <%= simple_form_for(@setbox) do |f| %>
+          <div id='cards'>
+            <h3 class="m-3">本學習集中的詞語 (<%= @setbox.cards.count %>) </h3>
+            <%= f.simple_fields_for :cards do |card| %>
+              <%= render 'show_fields', :f => card %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
 
-    <div class="col text-center">
-      <%= link_to "修改單詞卡", edit_setbox_path, class:'btn btn-xs btn-secondary' %>
-    </div>
+      <div class="col text-center m-4">
+        <%= link_to "新增或移除單詞卡", edit_setbox_path, class:'btn btn-xs btn-primary py-3 px-5' %>
+      </div>
 
+    </div>
   </div>
 </div>
 
