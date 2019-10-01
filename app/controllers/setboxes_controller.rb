@@ -1,6 +1,6 @@
 class SetboxesController < ApplicationController
 
-  before_action :find_setbox, only: [:show, :edit, :update, :pullreq]
+  before_action :find_setbox, only: [:show, :edit, :update]
   before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -72,7 +72,17 @@ class SetboxesController < ApplicationController
   end
 
   def pullreq
-    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(1)
+    @setboxes = Setbox.joins(:cards).includes(:cards).sample(1)
+  end
+
+  def write
+    @setboxes = Setbox.joins(:cards).includes(:cards).write(params[:write]).sample(1)
+    
+    # if params[:write] == card_def
+    #   redirect_to pullreq_setboxes_path, notice: "完全正確！"
+    # else
+    #   redirect_to write_setboxes_path, notice: "再試一次！"
+    # end
   end
 
   private
