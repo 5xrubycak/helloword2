@@ -5,9 +5,21 @@ class Setbox < ApplicationRecord
 
   def self.search(search) 
     if search
-      where(['cards.card_word LIKE ?', "%#{search}%"]) 
+      where(['title LIKE ? OR cards.card_word LIKE ? OR cards.card_def LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"]) 
+    else
+      all
+    end
+  end
+
+  def self.write(write) 
+    
+    if write
+      where("cards.card_def = ?", params[:write])
+      redirect_to pullreq_setboxes_path, notice: "完全正確！" 
     else
       all
     end
   end
 end
+
+
