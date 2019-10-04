@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
+  # Include default devise modules. Others available are: :confirmable,
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable,
+         :recoverable, :rememberable, :validatable, 
          :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
   has_many :setboxes
 
@@ -27,7 +27,6 @@ class User < ApplicationRecord
             google_token: access_token.credentials.token,
             google_uid: access_token.uid
           )
-          user.skip_confirmation! 
       end
     end
   end
@@ -55,7 +54,6 @@ class User < ApplicationRecord
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     user.name = auth.info.name
-    user.skip_confirmation! 
     user.save!
     return user
   end
