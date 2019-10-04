@@ -27,6 +27,7 @@ class User < ApplicationRecord
             google_token: access_token.credentials.token,
             google_uid: access_token.uid
           )
+          user.skip_confirmation! 
       end
     end
   end
@@ -54,6 +55,7 @@ class User < ApplicationRecord
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     user.name = auth.info.name
+    user.skip_confirmation! 
     user.save!
     return user
   end
