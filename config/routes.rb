@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get '/search', to: 'setboxes#search'
       get '/pullreq', to: 'setboxes#pullreq'
       get '/write', to: 'setboxes#write'
+      get '/answer', to: 'setboxes#answer'
     end
     member do
       post :copy

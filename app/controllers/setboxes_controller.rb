@@ -77,13 +77,22 @@ class SetboxesController < ApplicationController
 
   def write
     @setboxes = Setbox.joins(:cards).includes(:cards).write(params[:write]).sample(1)
-    
-    # if params[:write] == card_def
-    #   redirect_to pullreq_setboxes_path, notice: "完全正確！"
-    # else
-    #   redirect_to write_setboxes_path, notice: "再試一次！"
-    # end
   end
+
+  def answer
+    @setboxes = Setbox.joins(:cards).includes(:cards).write(params[:write]).sample(1)
+
+      # if write
+      #   # 成功
+      #   redirect_to answer_setboxes_path, notice: "全部答對!"
+      # else
+      #   # 失敗
+      #   render :write
+      # end
+    
+  end
+
+
 
   private
 
