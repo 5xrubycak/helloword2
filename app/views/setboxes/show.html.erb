@@ -9,8 +9,6 @@
         <button type="button" class="btn btn-primary btn-sm py-3 px-4 h1" data-toggle="modal" data-target="#exampleModalCenter">
           分享
         </button>
-
-        <%= link_to "刪除", setbox_path(@setbox), method:'delete', data: {confirm:'確定嗎'}, class: "btn btn-danger btn-sm py-3 px-4 h1" %>
       </div>
 
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -41,19 +39,19 @@
   </div>
 
   <div class="row">
-    <div class="col-2 text-center">
+    <div class="col-sm-3 col-lg-3 text-center">
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action active">
+        <a href="#" class="list-group-item list-group-item-action list-width active">
           測驗
         </a>
-        <%= link_to "筆試", write_setboxes_path, class: "list-group-item list-group-item-action" %>
-        <%= link_to "選擇", "#", class: "list-group-item list-group-item-action" %>
-        <%= link_to "複製", copy_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
-        <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action" %>
+        <%= link_to "筆試", write_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
+        <%= link_to "複製", copy_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action list-width" %>
+        <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
+        <%= link_to "刪除", setbox_path(@setbox), method:'delete', data: {confirm:'確定嗎'}, class: "list-group-item list-group-item-action list-width "%>
       </div>
     </div>
 
-    <div class="col-6 ml-5">
+    <div class="col-sm-9 col-lg-6">
       <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner cardshadow">
           <div class="carousel-item active">
