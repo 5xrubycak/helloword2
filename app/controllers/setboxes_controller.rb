@@ -1,4 +1,5 @@
 class SetboxesController < ApplicationController
+  protect_from_forgery with: :null_session, only: [:json]
 
   before_action :find_setbox, only: [:show, :edit, :update]
   before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
@@ -19,6 +20,13 @@ class SetboxesController < ApplicationController
       redirect_to home_setboxes_path, notice: "新增setbox成功" 
     else
       render :new, notice: "error"
+    end
+  end
+
+  def json
+    respond_to do |format|
+      format.html
+      format.json { render json: { test: 123 } }
     end
   end
 
