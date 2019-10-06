@@ -1,23 +1,33 @@
-<%= form_tag(judge_setbox_path) do%>
+<div class="container">
+  <div class="py-4">
+    <h1>筆試題：</h1>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <%= form_tag(judge_setbox_path) do %>
         <% @setbox.cards.sample(5).each do |card| %>
-        <div>
-          <%= "單字： #{card.card_word}" %>
-        </div>
-        <%= text_field_tag :write, 
-          nil, 
-          name: "card[#{card.id}]",
-          class: "form-control", 
-          # value: @answer[card.id],
-          placeholder: "請輸入答案", 
-          style: "display:inline-block;width:75%;" 
-        %> 
-      
-        <%= "定義： #{card.card_def}" %>
-
-        <% end %>
-
-      <%= submit_tag "送出",
+          <div class="row mb-4">
+            <div class="col-lg-5 col-sm-12">
+              <h4><%= "單字： #{card.card_word}" %></h4>
+            </div>
+            <div class="col-lg-7 col-sm-12">
+              <%= text_field_tag :write, 
+                nil, 
+                name: "card[#{card.id}]",
+                class: "form-control", 
+                # value: @answer[card.id],
+                placeholder: "請輸入答案"
+              %> 
+            </div>
+          </div>
+        <% end %> 
+          <%= submit_tag "送出",
           :name => nil,
-          class: "btn btn-outline-dark" 
-      %> 
-<% end %>
+          class: "btn btn-primary btn-lg btn-block mt-3 p-3" 
+          %> 
+        </div> 
+      <% end %>
+    </div>
+  </div>
+</div>
