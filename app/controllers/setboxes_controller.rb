@@ -1,6 +1,6 @@
 class SetboxesController < ApplicationController
 
-  before_action :find_setbox, only: [:show, :edit, :update]
+  before_action :find_setbox, only: [:show, :edit, :update, :answer]
   before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -68,7 +68,7 @@ class SetboxesController < ApplicationController
   end
 
   def search
-    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(9)
+    @setboxes = Setbox.joins(:cards, :user).includes(:cards, :user).search(params[:search]).sample(9)
   end
 
   def pullreq
@@ -76,14 +76,34 @@ class SetboxesController < ApplicationController
   end
 
   def write
-    @setboxes = Setbox.joins(:cards).includes(:cards).write(params[:write]).sample(1)
-    
-    # if params[:write] == card_def
-    #   redirect_to pullreq_setboxes_path, notice: "完全正確！"
-    # else
-    #   redirect_to write_setboxes_path, notice: "再試一次！"
-    # end
+    @setbox = Setbox.find_by(id: params[:id])
   end
+
+  def judge
+    @setbox = Setbox.find_by(id: params[:id])
+    
+      final_result = []
+      params[:card].each do |key, value|
+        # byebug
+        @answer = params[:card]
+
+        result = Card.find_by(id: key).card_def == value
+        final_result << result
+        # @faults << result
+      end
+
+      if final_result.count(false) != 0
+        render :write
+      else
+        redirect_to answer_setbox_path, notice: "全部答對!"
+      end
+
+  end
+
+  def answer
+  end
+
+
 
   private
 
