@@ -11,14 +11,6 @@ class Setbox < ApplicationRecord
     end
   end
 
-  def self.write(write) 
-    if write
-      where("cards.card_def = ?", "%#{write}%")
-      # redirect_to answer_setboxes_path, notice: "完全正確！" 
-    else
-      all
-    end
-  end
 end
 
 

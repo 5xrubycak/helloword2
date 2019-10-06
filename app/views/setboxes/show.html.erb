@@ -46,7 +46,7 @@
         <a href="#" class="list-group-item list-group-item-action active">
           測驗
         </a>
-        <%= link_to "筆試", write_setboxes_path, class: "list-group-item list-group-item-action" %>
+        <%= link_to "筆試", write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
         <%= link_to "選擇", "#", class: "list-group-item list-group-item-action" %>
         <%= link_to "複製", copy_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
         <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action" %>
