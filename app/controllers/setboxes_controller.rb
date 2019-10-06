@@ -24,10 +24,11 @@ class SetboxesController < ApplicationController
   end
 
   def json
-    respond_to do |format|
-      format.html
-      format.json { render json: { test: 123 } }
-    end
+    render json:{message: 'ok', token: "#{params[:answer]}"}, stauts:200
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: { test: 123 } }
+    # end
   end
 
   def show
