@@ -98,8 +98,7 @@ class SetboxesController < ApplicationController
         # redirect_to answer_setbox_path, notice: "全部答對!"
         respond_to do |format|
 
-          format.js #{ render :partial => 'perfect.js.erb' }
-          #I'm assuming its js request
+          format.js
         end
       end
 
