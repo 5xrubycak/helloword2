@@ -22,5 +22,12 @@ Rails.application.routes.draw do
     # 使用者登入首頁
   end
 
+  # api
+  namespace :api do
+    namespace :v1 do
+      # 你之後的路由
+    end
+  end
+
   root 'setboxes#index'
 end
