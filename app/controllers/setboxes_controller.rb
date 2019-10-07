@@ -95,7 +95,12 @@ class SetboxesController < ApplicationController
       if final_result.count(false) != 0
         render :write
       else
-        redirect_to answer_setbox_path, notice: "全部答對!"
+        # redirect_to answer_setbox_path, notice: "全部答對!"
+        respond_to do |format|
+
+          format.js #{ render :partial => 'perfect.js.erb' }
+          #I'm assuming its js request
+        end
       end
 
   end
