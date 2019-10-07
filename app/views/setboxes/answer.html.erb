@@ -1,4 +1,21 @@
-<h1>幾霸昏！</h1>
+<div class="d-flex align-items-center justify-content-center h-100">
+  <div class="d-flex flex-column">
+    <h1 class="text align-self-center">幾霸昏！</h1>
+    <%= link_to "重新挑戰", write_setbox_path, method: "post", class:'btn btn-lg btn-primary mb-3'%>
+    <%= link_to "回單詞卡列表", setbox_path, class:'btn btn-lg btn-primary' %>
+  </div>
+</div>
 
-<%= link_to "重新挑戰", write_setbox_path, method: "post", class:'btn btn-xs btn-primary py-3 px-5'%>
-<%= link_to "回單詞卡列表", setbox_path, class:'btn btn-xs btn-primary py-3 px-5' %>
+<%= render 'shared/frontend/footer' %>
+
+<style>
+  html, body {
+    height: 100%;
+    background-color: #ccc;
+  }
+  .container, .row.justify-content-center.align-items-center {
+    height: 100%;
+    min-height: 100%;
+  }
+</style>
+
