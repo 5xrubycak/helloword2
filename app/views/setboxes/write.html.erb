@@ -5,7 +5,7 @@
 
   <div class="row">
     <div class="col-12">
-      <%= form_tag(judge_setbox_path) do %>
+      <%= form_tag(judge_setbox_path, remote: true) do %>
         <% @setbox.cards.sample(5).each do |card| %>
           <div class="row mb-4">
             <div class="col-lg-5 col-sm-12">
@@ -31,3 +31,5 @@
     </div>
   </div>
 </div>
+
+<div id="my_modal_content"></div>
