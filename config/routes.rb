@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   # api
   namespace :api do
     namespace :v1 do
-      # 你之後的路由
+      post 'login' => 'authentication#login'
+      resources :setboxes
     end
   end
 
