@@ -29,5 +29,33 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
+# en:
+#   hello: "Hello world"
+
+# ja:
+#   setboxes:
+#     show:
+#       name: "名前"
+#       hello_user!: 'こんにちは,%{hello_user}さん!'
+#       edit: '編集'
+#       back: '戻る'
+
 en:
-  hello: "Hello world"
+  setboxes:
+    show:
+      學習集名稱: "SETBOX TITLE"
+      分享: "SHARE"
+      分享此學習集: "SHARE THIS SETBOX"
+      複製連結: "COPY THE LINK"
+      功能: "OPTION"
+      筆試: "TEST"
+      複製: "COPY"
+      刪除: "DELETE"
+      本學習集中的詞語: "CARD AMOUNT"
+      新增或移除單詞卡: "CREATE OR DELETE CARDS"
+    
+    new:
+      新增學習集: "CREATE NEW SETBOX"
+
+    form:
+      新增單詞: "CREATE NEW CARD"

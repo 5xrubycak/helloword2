@@ -24,5 +24,9 @@ Rails.application.routes.draw do
     # 使用者登入首頁
   end
 
+  scope "(:locale)" do
+    resources :setboxes
+  end
+
   root 'setboxes#index'
 end

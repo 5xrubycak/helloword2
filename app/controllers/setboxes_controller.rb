@@ -23,6 +23,7 @@ class SetboxesController < ApplicationController
   end
 
   def show
+    # @setbox = Setbox.new
   end
 
   def edit

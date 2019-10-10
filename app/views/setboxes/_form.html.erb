@@ -2,7 +2,7 @@
   <h3>
     <%= f.input :title , label: "學習集名稱", placeholder: '科目，章節，單元'%>
   </h3>
-  <h4 class="mt-4">新增單詞</h4>
+  <h4 class="mt-4"><%= t '.新增單詞' %></h4>
   <div id='cards'>
     <%= f.simple_fields_for :cards do |card| %>
       <%= render 'card_fields', :f => card %>

@@ -4,10 +4,10 @@
 
 <div class="container">
   <div class="d-flex justify-content-between py-4">
-    <h1> 學習集名稱：<%= @setbox.title %> </h1>
+    <h1> <%= t '.學習集名稱' %>：<%= @setbox.title %> </h1>
       <div>
         <button type="button" class="btn btn-primary btn-sm py-3 px-4 h1" data-toggle="modal" data-target="#exampleModalCenter">
-          分享
+         <%= t '.分享' %>
         </button>
       </div>
 
@@ -15,7 +15,7 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalCenterTitle">分享此學習集</h2>
+              <h2 class="modal-title" id="exampleModalCenterTitle"><%= t '.分享此學習集' %></h2>
             </div>
             <div class="modal-body">
               <div class="row">
@@ -23,7 +23,7 @@
                   <input id="urltext" type="text" value="<%= 'localhost:3000' + setbox_path(@setbox) %>" style="height: 100%; width:100% ">
                 </div>
                 <div class="col-3"> 
-                  <button onclick="urlFunction()"type="button" class="btn btn-warning">複製連結</button>
+                  <button onclick="urlFunction()"type="button" class="btn btn-warning"><%= t '.複製連結' %></button>
                 </div>
               </div>
               <div class="row d-flex mt-4 justify-content-center align-items-center">
@@ -41,7 +41,7 @@
   <div class="row">
     <div class="col-sm-3 col-lg-3 text-center">
       <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action list-width active">功能</a>
+        <a href="#" class="list-group-item list-group-item-action list-width active"><%= t '.功能' %></a>
           <% if user_signed_in? %>
             <%= link_to "筆試", write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
             <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
@@ -116,7 +116,7 @@
       <div class="col-12">
         <%= simple_form_for(@setbox) do |f| %>
           <div id='cards'>
-            <h3 class="m-3">本學習集中的詞語 (<%= @setbox.cards.count %>) </h3>
+            <h3 class="m-3"><%= t '.本學習集中的詞語' %> (<%= @setbox.cards.count %>) </h3>
             <%= f.simple_fields_for :cards do |card| %>
               <%= render 'show_fields', :f => card %>
             <% end %>
@@ -131,6 +131,7 @@
     </div>
   </div>
 </div>
+
 
 <%# QRCODE JAVASCRIPT %>
   <script type="text/javascript">
