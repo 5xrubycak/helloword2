@@ -1,2 +1,5 @@
-$("#my_modal_content").html("<%= j (render 'perfect') %>");
-$("#myModal").modal('show');
+<% @allwrong_answer.each do |answer| %>
+<%# clear all style or errors%>
+
+  $("#set_<%= answer.id %>").html("<%= j (render 'unperfect') %>");
+<% end %>
