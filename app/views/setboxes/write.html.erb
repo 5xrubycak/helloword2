@@ -14,10 +14,11 @@
             </div>
             <div class="col-lg-7 col-sm-12">
               <%= text_field_tag :id, 
-                nil, 
+                nil,
                 name: "card[#{card.id}]",
                 class: "form-control", 
-                placeholder: "請輸入答案"
+                placeholder: "請輸入答案",
+                id: card.id
               %> 
               <span class="wrong_answer" id="set_<%= card.id %>"></span>
             </div>
@@ -37,10 +38,13 @@
 
 <script>
 
-
-//preventDefault
-// clear style
-// submit
+document.querySelectorAll('.form-control').forEach(element => {
+  element.addEventListener('input', (event) => {
+    if (document.querySelector(`#set_${event.target.id}`)) {
+      document.querySelector(`#set_${event.target.id}`).innerHTML = '';
+    }
+  });
+});
 
   
 </script>

@@ -1,5 +1,3 @@
 <% @allwrong_answer.each do |answer| %>
-<%# clear all style or errors%>
-
   $("#set_<%= answer.id %>").html("<%= j (render 'unperfect') %>");
 <% end %>
