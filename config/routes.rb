@@ -18,8 +18,8 @@ Rails.application.routes.draw do
     member do
       post :copy
       post :write
-      get :answer
       post :judge
+      get :write
     end
     # 使用者登入首頁
   end

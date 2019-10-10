@@ -82,31 +82,30 @@ class SetboxesController < ApplicationController
   def judge
     @setbox = Setbox.find_by(id: params[:id])
     
-      final_result = []
-      params[:card].each do |key, value|
-        # byebug
-        @answer = params[:card]
-
-        result = Card.find_by(id: key).card_def == value
-        final_result << result
-        # @faults << result
-      end
-
-      if final_result.count(false) != 0
-        render :write
+    @allwrong_answer = []
+    @allright_answer = []
+    params[:card].each do |key, value|
+      # byebug
+      card = Card.find_by(id: key)
+      if verify_answer(card, value)
+        @allright_answer << card
       else
-        # redirect_to answer_setbox_path, notice: "全部答對!"
-        respond_to do |format|
-
-          format.js
-        end
+        @allwrong_answer << card
       end
-
+    end
+    puts "==================="
+    puts @allwrong_answer.map(&:id)
+    puts "==================="
+    if @allwrong_answer.empty?
+      respond_to do |format|
+        format.js 
+      end
+    else
+      respond_to do |format|
+        format.js {render :write}
+      end
+    end
   end
-
-  def answer
-  end
-
 
 
   private
@@ -123,5 +122,9 @@ class SetboxesController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path, notice: '請先登入會員'
     end
+  end
+
+  def verify_answer(card, value)
+    card.card_def == value
   end
 end
