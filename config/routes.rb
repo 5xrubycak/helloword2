@@ -13,7 +13,6 @@ Rails.application.routes.draw do
       get '/home' ,to: 'setboxes#home'
       get '/search', to: 'setboxes#search'
       get '/pullreq', to: 'setboxes#pullreq'
-      # get '/answer', to: 'setboxes#answer'
     end
     member do
       post :copy

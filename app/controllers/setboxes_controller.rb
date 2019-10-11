@@ -1,6 +1,6 @@
 class SetboxesController < ApplicationController
 
-  before_action :find_setbox, only: [:show, :edit, :update, :answer]
+  before_action :find_setbox, only: [:show, :edit, :update, :write, :judge]
   before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -76,12 +76,9 @@ class SetboxesController < ApplicationController
   end
 
   def write
-    @setbox = Setbox.find_by(id: params[:id])
   end
 
   def judge
-    @setbox = Setbox.find_by(id: params[:id])
-    
     @allwrong_answer = []
     @allright_answer = []
     params[:card].each do |key, value|
@@ -93,9 +90,9 @@ class SetboxesController < ApplicationController
         @allwrong_answer << card
       end
     end
-    puts "==================="
-    puts @allwrong_answer.map(&:id)
-    puts "==================="
+    # puts "==================="
+    # puts @allwrong_answer.map(&:id)
+    # puts "==================="
     if @allwrong_answer.empty?
       respond_to do |format|
         format.js 
