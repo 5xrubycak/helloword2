@@ -35,8 +35,8 @@
 en:
   setboxes:
     card_fields:
-      單詞：apple: "WORD: 蘋果"
-      定義：蘋果: "DEFENITION: apple"
+      單詞：apple: "WORD：蘋果"
+      定義：蘋果: "DEFENITION：apple"
 
     form:
       學習集名稱: "SETBOX TITLE"
@@ -85,7 +85,7 @@ en:
       學習集名稱: "SETBOX TITLE"
       分享: "SHARE"
       分享此學習集: "SHARE THIS SETBOX"
-      複製連結: "COPY THE LINK"
+      複製連結: "COPY"
       功能: "OPTION"
       筆試: "TEST"
       複製: "COPY"
