@@ -43,16 +43,16 @@
       <div class="list-group">
         <a href="#" class="list-group-item list-group-item-action list-width active"><%= t '.功能' %></a>
           <% if user_signed_in? %>
-            <%= link_to "筆試", write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
+            <%= link_to t(".筆試"), write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
             <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
-            <%= link_to "複製", copy_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action list-width" %>
+            <%= link_to t(".複製"), copy_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action list-width" %>
             <% if current_user.id === @setbox.user_id %>
-              <%= link_to "刪除", setbox_path(@setbox), method:'delete', data: {confirm:'確定嗎'}, class: "list-group-item list-group-item-action list-width "%>
+              <%= link_to t(".刪除"), setbox_path(@setbox), method:'delete', data: {confirm:t('.確定嗎')}, class: "list-group-item list-group-item-action list-width "%>
             <% end %>
           <% else %>
-            <%= link_to "筆試", write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
+            <%= link_to t(".筆試"), write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
             <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
-            <%= link_to "複製", new_setbox_path, class: "list-group-item list-group-item-action list-width" %>
+            <%= link_to t(".複製"), new_setbox_path, class: "list-group-item list-group-item-action list-width" %>
         <% end %>
       </div>
     </div>
@@ -125,7 +125,7 @@
       </div>
 
       <div class="col text-center m-4">
-        <%= link_to "新增或移除單詞卡", edit_setbox_path, class:'btn btn-xs btn-primary py-3 px-5' %>
+        <%= link_to t(".新增或移除單詞卡"), edit_setbox_path, class:'btn btn-xs btn-primary py-3 px-5' %>
       </div>
 
     </div>

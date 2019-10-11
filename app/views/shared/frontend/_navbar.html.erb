@@ -12,12 +12,12 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <%= link_to "搜尋", search_setboxes_path, class: 'nav-link' %>
+        <%= link_to t(".搜尋"), search_setboxes_path, class: 'nav-link' %>
       </li>     
       </li>
     
       <li class="nav-item">
-        <%= link_to "建立", new_setbox_path, class: 'nav-link' %>
+        <%= link_to t(".建立"), new_setbox_path, class: 'nav-link' %>
       </li>
     </ul>
 
@@ -27,10 +27,10 @@
 
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to "個人資料", edit_user_registration_path, class: 'nav-link' %>
+          <%= link_to t(".個人資料"), edit_user_registration_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to "登出", destroy_user_session_path, class: 'nav-link', method: 'delete' %>
+          <%= link_to t(".登出"), destroy_user_session_path, class: 'nav-link', method: 'delete' %>
         </li>
         <li class="nav-item">
           <% if I18n.locale.to_s == "en" %>
@@ -41,10 +41,10 @@
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to "註冊", new_user_registration_path, class: 'nav-link' %>
+          <%= link_to t(".註冊"), new_user_registration_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to "登入", new_user_session_path, class: 'nav-link' %>
+          <%= link_to t(".登入"), new_user_session_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
           <% if I18n.locale.to_s == "en" %>

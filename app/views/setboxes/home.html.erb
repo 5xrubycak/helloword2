@@ -1,7 +1,7 @@
 <div class="container">
   <div class="d-flex justify-content-between py-4">
-    <h1>學習集列表</h1>
-    <%= link_to "新增學習集", new_setbox_path, class: 'btn btn-primary btn-sm py-3 px-4' %>
+    <h1><%= t('.學習集列表') %> </h1>
+    <%= link_to t(".新增學習集"), new_setbox_path, class: 'btn btn-primary btn-sm py-3 px-4' %>
   </div>
 
   <%# 將此頁面用id=home綁住，是為了在show頁面時可以正常呈現 %>

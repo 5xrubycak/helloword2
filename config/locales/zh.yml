@@ -1,0 +1,113 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+# en:
+#   hello: "Hello world"
+
+zh:
+  setboxes:
+    card_fields:
+      單詞：apple: "單詞：apple"
+      定義：蘋果: "定義：蘋果"
+
+    form:
+      學習集名稱: "學習集名稱"
+      科目，章節，單元: "科目，章節，單元"
+      新增單詞: "新增單詞"
+      + 新增單詞卡: "+ 新增單詞卡"
+      建立: "建立"
+
+    perfect:
+      對答案時間: "對答案時間:"
+      恭喜您全部答對了！: "恭喜您全部答對了！"
+      重新挑戰: "重新挑戰"
+      回單詞卡列表: "回單詞卡列表"
+
+    unperfect:
+      這題寫錯囉！: "這題寫錯囉！"
+
+    edit:
+      編輯學習集: "編輯學習集"
+      回列表: "回列表"
+
+    home:
+      學習集列表: "學習集列表"
+      新增學習集: "新增學習集"
+
+    index:
+      你是忘記了，還是記不起來？: "你是忘記了，還是記不起來？"
+      善用零碎時間，記住任何你想記住的事物。: "善用零碎時間，記住任何你想記住的事物。"
+      學習集: "學習集"
+      作者: "作者"
+      搜尋學習集: "搜尋學習集"
+      搜尋: "搜尋"
+
+    new:
+      新增學習集: "新增學習集"
+      回列表: "回列表"
+
+    search:
+      搜尋學習集: "搜尋學習集"
+      搜尋: "搜尋"
+      學習集: "學習集"
+      作者: "作者"
+      # 單字：: "WORD:"
+
+    show:
+      學習集名稱: "學習集名稱"
+      分享: "分享"
+      分享此學習集: "分享此學習集"
+      複製連結: "複製連結"
+      功能: "功能"
+      筆試: "筆試"
+      複製: "複製"
+      刪除: "刪除"
+      確定嗎: "確定嗎"
+      本學習集中的詞語: "本學習集中的詞語"
+      新增或移除單詞卡: "新增或移除單詞卡"
+
+    write:
+      筆試題: "筆試題"
+      # 單字: "WORD"
+      請輸入答案: "請輸入答案"
+      送出: "送出"
+    
+  shared:
+    frontend:
+      navbar:
+        搜尋: "搜尋"
+        建立: "建立"
+        個人資料: "個人資料"
+        登出: "登出"
+        註冊: "註冊"
+        登入: "登入"
+
+

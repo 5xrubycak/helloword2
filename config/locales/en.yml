@@ -32,16 +32,55 @@
 # en:
 #   hello: "Hello world"
 
-# ja:
-#   setboxes:
-#     show:
-#       name: "名前"
-#       hello_user!: 'こんにちは,%{hello_user}さん!'
-#       edit: '編集'
-#       back: '戻る'
-
 en:
   setboxes:
+    card_fields:
+      單詞：apple: "WORD: 蘋果"
+      定義：蘋果: "DEFENITION: apple"
+
+    form:
+      學習集名稱: "SETBOX TITLE"
+      科目，章節，單元: "SUBJECT, CHAPTER"
+      新增單詞: "CREATE NEW CARD"
+      + 新增單詞卡: "+ CREATE NEW CARD"
+      建立: "SUBMIT"
+
+    perfect:
+      對答案時間: "SCORE:"
+      恭喜您全部答對了！: "YOU GOT A PERFECT SCORE!"
+      重新挑戰: "TRY AGAIN"
+      回單詞卡列表: "BACK TO CARD LIST"
+
+    unperfect:
+      這題寫錯囉！: "INCORRECT!"
+
+    edit:
+      編輯學習集: "EDIT SETBOX"
+      回列表: "BACK TO SETBOX LIST"
+
+    home:
+      學習集列表: "SETBOX LIST"
+      新增學習集: "CREATE NEW SETBOX"
+
+    index:
+      你是忘記了，還是記不起來？: "Can't remember things effectively?"
+      善用零碎時間，記住任何你想記住的事物。: "Make good use of time and remember anything you want to remember."
+      學習集: "SETBOX"
+      作者: "AUTHOR"
+      搜尋學習集: "SEARCH SETBOX"
+      搜尋: "SEARCH"
+
+    new:
+      新增學習集: "CREATE NEW SETBOX"
+      回列表: "BACK TO SETBOX LIST"
+
+    search:
+      搜尋學習集: "SEARCH SETBOX"
+      搜尋: "SEARCH"
+      學習集: "SETBOX"
+      作者: "AUTHOR"
+      # 單字：: "WORD:"
+
     show:
       學習集名稱: "SETBOX TITLE"
       分享: "SHARE"
@@ -51,11 +90,23 @@ en:
       筆試: "TEST"
       複製: "COPY"
       刪除: "DELETE"
+      確定嗎: "ARE YOU SURE?"
       本學習集中的詞語: "CARD AMOUNT"
       新增或移除單詞卡: "CREATE OR DELETE CARDS"
-    
-    new:
-      新增學習集: "CREATE NEW SETBOX"
 
-    form:
-      新增單詞: "CREATE NEW CARD"
+    write:
+      筆試題: "ENTER TEST"
+      # 單字：: "WORD%{word}"
+      請輸入答案: "ENTER YOUR ANSWER"
+      送出: "SUBMIT"
+
+  shared:
+    frontend:
+      navbar:
+        搜尋: "SEARCH"
+        建立: "CREATE"
+        個人資料: "PERSONAL"
+        登出: "SIGN_OUT"
+        註冊: "REGISTER"
+        登入: "SIGN_IN"
+
