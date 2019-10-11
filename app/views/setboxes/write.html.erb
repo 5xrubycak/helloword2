@@ -17,7 +17,8 @@
                 nil, 
                 name: "card[#{card.id}]",
                 class: "form-control", 
-                placeholder: t(".請輸入答案")
+                placeholder: t(".請輸入答案"),
+                id: card.id
               %> 
               <span class="wrong_answer" id="set_<%= card.id %>"></span>
             </div>
@@ -36,9 +37,12 @@
 <div id="my_modal_content"></div>
 
 <script>
-
-
-
-
+document.querySelectorAll('.form-control').forEach(element => {
+  element.addEventListener('input', (event) => {
+    if (document.querySelector(`#set_${event.target.id}`)) {
+      document.querySelector(`#set_${event.target.id}`).innerHTML = '';
+    }
+  });
+});
   
 </script>
