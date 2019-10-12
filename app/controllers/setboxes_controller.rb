@@ -1,4 +1,5 @@
 class SetboxesController < ApplicationController
+  include SetboxesHelper
   # protect_from_forgery with: :null_session, only: [:json]
   # 錯誤的方法 下面的才是對的
   skip_before_action :verify_authenticity_token
