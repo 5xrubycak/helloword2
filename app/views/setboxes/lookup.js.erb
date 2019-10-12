@@ -1,0 +1,10 @@
+var result = '<%= @result%>';
+
+console.log('lookup.js.erb');
+
+$('#card_word').on('blur', function(){
+  console.log('lookup inside');
+  console.log(result);
+  $('#card_def').val(result);  
+                
+})
