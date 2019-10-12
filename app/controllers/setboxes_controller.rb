@@ -25,14 +25,6 @@ class SetboxesController < ApplicationController
     end
   end
 
-  def json
-    render json:{message: 'ok', token: "#{params[:answer]}"}, stauts:200
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render json: { test: 123 } }
-    # end
-  end
-
   def show
   end
 

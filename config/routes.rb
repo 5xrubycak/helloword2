@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post 'login' => 'authentication#login'
+      post 'addsetbox' => 'authentication#addsetbox'
       post 'logout' => 'authentication#logout'
       resources :setboxes
     end
