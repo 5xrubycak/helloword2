@@ -1,17 +1,17 @@
 <%= simple_form_for(setbox) do |f| %>
   <h3>
-    <%= f.input :title , label: "學習集名稱", placeholder: '科目，章節，單元'%>
+    <%= f.input :title , label: t(".學習集名稱"), placeholder: t('.科目，章節，單元')%>
   </h3>
-  <h4 class="mt-4">新增單詞</h4>
+  <h4 class="mt-4"><%= t('.新增單詞') %></h4>
   <div id='cards'>
     <%= f.simple_fields_for :cards do |card| %>
       <%= render 'card_fields', :f => card %>
     <% end %>
     <div class='links d-block text-center mt-2 small'>
-      <%= link_to_add_association '+ 新增單詞卡', f, :cards, class: 'btn btn-secondary btn-lg btn-block mt-3 p-3' %>
+      <%= link_to_add_association t('.+ 新增單詞卡'), f, :cards, class: 'btn btn-secondary btn-lg btn-block mt-3 p-3' %>
     </div> 
   </div>
   <div class="d-flex flex-row-reverse">
-    <%= f.submit '建立', class:"btn btn-sm btn-primary mt-3 py-3 px-4"%>
+    <%= f.submit t('.建立'), class:"btn btn-sm btn-primary mt-3 py-3 px-4"%>
   </div>
 <% end %>

@@ -1,16 +1,16 @@
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="myModalLabel">對答案時間</h4>
-                </div>
-                <div class="modal-body">
-                    <label>恭喜您全部答對了！</label>
-                </div>
-                <div class="modal-footer">
-                  <%= link_to "重新挑戰", write_setbox_path, method: "post", class:'btn btn-xs btn-primary py-3 px-5'%>
-                  <%= link_to "回單詞卡列表", setbox_path, class:'btn btn-xs btn-primary py-3 px-5' %>
-                </div>
-            </div>
-        </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"><%= t('.對答案時間') %> </h4>
+      </div>
+      <div class="modal-body">
+        <label><%= t('.恭喜您全部答對了！') %></label>
+      </div>
+      <div class="modal-footer">
+        <%= link_to t(".重新挑戰"), write_setbox_path, method: "post", class:'btn btn-xs btn-primary py-3 px-5'%>
+        <%= link_to t(".回單詞卡列表"), setbox_path, class:'btn btn-xs btn-primary py-3 px-5' %>
+      </div>
     </div>
+  </div>
+</div>

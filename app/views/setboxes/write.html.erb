@@ -1,6 +1,6 @@
 <div class="container">
   <div class="py-4">
-    <h1>筆試題：</h1>
+    <h1><%= t('.筆試題') %>：</h1>
   </div>
 
   <div class="row">
@@ -17,14 +17,14 @@
                 nil,
                 name: "card[#{card.id}]",
                 class: "form-control", 
-                placeholder: "請輸入答案",
+                placeholder: t(".請輸入答案"),
                 id: card.id
               %> 
               <span class="wrong_answer" id="set_<%= card.id %>"></span>
             </div>
           </div>
         <% end %> 
-          <%= submit_tag "送出",
+          <%= submit_tag t(".送出"),
           :name => nil,
           class: "btn btn-primary btn-lg btn-block mt-3 p-3" 
           %> 

@@ -5,16 +5,16 @@
         <div class="card card-signin my-5">
           <div class="card-body">
             <img src="https://i.imgur.com/UH1mnbT.jpg"  style="max-width:150px" class="rounded mx-auto d-block">
-            <h5 class="card-title text-center ">修改個人資料</h5>
+            <h5 class="card-title text-center "><%= t('.修改個人資料') %></h5>
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= f.error_notification %>
               
               <div class="form-inputs">
                 <div class="row">
-                  <div class="col"><%= f.input :name, label: '名字' %></div>
+                  <div class="col"><%= f.input :name, label: t('.名字') %></div>
                 </div>
                 <div class="row">
-                  <div class="col"><%= f.input :email, label: '信箱', required: false, autofocus: true %></div>
+                  <div class="col"><%= f.input :email, label: t('.信箱'), required: false, autofocus: true %></div>
                 </div>
                 
                 <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -25,7 +25,7 @@
                   <div class="col">
                     <%= f.input :password,
                                 required: false,
-                                label: '密碼',
+                                label: t('.密碼'),
                                 input_html: { autocomplete: "new-password" } %>
                   </div>
                 </div>
@@ -33,7 +33,7 @@
                   <div class="col">
                     <%= f.input :password_confirmation,
                                 required: false,
-                                label: '密碼確認',
+                                label: t('.密碼確認'),
                                 input_html: { autocomplete: "new-password" } %>
                   </div>
                 </div>
@@ -41,7 +41,7 @@
 
               <button class="btn btn-lg btn-success btn-block rounded-pill">
                 <div class="form-actions">
-                  <%= f.button :submit, "Update", class:'text-light font-weight-bold' %>
+                  <%= f.button :submit, t(".更新"), class:'text-light font-weight-bold' %>
                 </div>
               </button>
             <% end %>
@@ -54,4 +54,3 @@
 </div>
 
 <%= render 'shared/frontend/footer' %>
-

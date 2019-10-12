@@ -4,27 +4,27 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h4 class="card-title text-center ">Register</h4>
+            <h4 class="card-title text-center "><%= t('.註冊') %> </h4>
               <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= f.error_notification %>
                 <div class="form-inputs">
-                  <%= f.input :email, label: 'Email address',
+                  <%= f.input :email, label: t('.信箱'),
                               required: false,
                               autofocus: true,
                               input_html: { autocomplete: "email" }%>
-                  <%= f.input :password, label: 'Password',
+                  <%= f.input :password, label: t('.密碼'),
                               required: false,
                               input_html: { autocomplete: "new-password" } %>
-                  <%= f.input :password_confirmation, label: 'Re-enter password',
+                  <%= f.input :password_confirmation, label: t('.密碼確認'),
                               required: false,
                               input_html: { autocomplete: "new-password" } %>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block rounded-pill">
                   <div class="form-actions">
-                    <%= f.button :submit, "Register", class:'text-light font-weight-bold' %>
+                    <%= f.button :submit, t(".註冊"), class:'text-light font-weight-bold' %>
                   </div>
                 </button>
-                <div class="d-block text-center mt-2 small"><%= link_to "Sign In", new_user_session_path %></div>
+                <div class="d-block text-center mt-2 small"><%= link_to t(".登入"), new_user_session_path %></div>
                 <hr class="my-4">
               <% end %>
               <%= render "devise/shared/links" %>
