@@ -39,6 +39,12 @@ class SetboxesController < ApplicationController
     end
   end
 
+  def lookup
+    @card_text = params[:aa]
+    @result = translate_text(@card_text).text
+    # byebug 
+  end
+
   def copy
     @setbox = Setbox.find_by(id: params[:id])
     # dup_setbox=Setbox.find(6).dup
