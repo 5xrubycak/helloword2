@@ -1,4 +1,7 @@
 class SetboxesController < ApplicationController
+  # protect_from_forgery with: :null_session, only: [:json]
+  # 錯誤的方法 下面的才是對的
+  skip_before_action :verify_authenticity_token
 
   before_action :find_setbox, only: [:show, :edit, :update, :write, :judge]
   before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
