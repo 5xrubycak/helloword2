@@ -13,11 +13,12 @@ Rails.application.routes.draw do
       get '/home' ,to: 'setboxes#home'
       get '/search', to: 'setboxes#search'
       get '/pullreq', to: 'setboxes#pullreq'
-      get '/write', to: 'setboxes#write'
-      post '/json', to: 'setboxes#json'
     end
     member do
       post :copy
+      post :write
+      post :judge
+      get :write
     end
     # 使用者登入首頁
   end

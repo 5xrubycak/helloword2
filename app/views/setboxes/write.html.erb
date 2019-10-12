@@ -1,34 +1,50 @@
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-12">
-            <form>
-              <% @setboxes.each do |setbox| %>
-              <div class="form-group row">
-                <% setbox.cards.each do |card| %>
-                <label for="inputAnswer" class="col-sm-4 col-form-label text-center mb-3"><%= card.card_word %></label>
-                <div class="col-sm-8">
+<div class="container">
+  <div class="py-4">
+    <h1>筆試題：</h1>
+  </div>
 
-                <div class="container text-center">
-                  <%= form_tag(write_setboxes_path, :method => "get") do %>
-                  <%= text_field_tag :write, 
-                      nil, 
-                      class: "form-control", 
-                      placeholder: "請輸入答案", 
-                      style: "display:inline-block;width:75%;" 
-                  %> 
-                 
-                  <% end %> 
-                </div>
-                   
-                   
-                </div>
-                <% end %>
-              </div>
-                <div class="text-center">
-                  <%= submit_tag "送出",:name => nil,class: "btn btn-outline-secondary" %>
-                </div>
-              <% end %>
-            </form>
-        </div>
+  <div class="row">
+    <div class="col-12">
+      <%= form_tag(judge_setbox_path, class: 'form js-form', remote: true) do %>
+        <% @setbox.cards.sample(5).each do |card| %>
+        
+          <div class="row mb-4">
+            <div class="col-lg-5 col-sm-12">
+              <h4><%= "單字： #{card.card_word}" %></h4>
+            </div>
+            <div class="col-lg-7 col-sm-12">
+              <%= text_field_tag :id, 
+                nil,
+                name: "card[#{card.id}]",
+                class: "form-control", 
+                placeholder: "請輸入答案",
+                id: card.id
+              %> 
+              <span class="wrong_answer" id="set_<%= card.id %>"></span>
+            </div>
+          </div>
+        <% end %> 
+          <%= submit_tag "送出",
+          :name => nil,
+          class: "btn btn-primary btn-lg btn-block mt-3 p-3" 
+          %> 
+        </div> 
+      <% end %>
     </div>
+  </div>
 </div>
+
+<div id="my_modal_content"></div>
+
+<script>
+
+document.querySelectorAll('.form-control').forEach(element => {
+  element.addEventListener('input', (event) => {
+    if (document.querySelector(`#set_${event.target.id}`)) {
+      document.querySelector(`#set_${event.target.id}`).innerHTML = '';
+    }
+  });
+});
+
+  
+</script>

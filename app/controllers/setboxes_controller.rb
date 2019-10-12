@@ -3,7 +3,7 @@ class SetboxesController < ApplicationController
   # 錯誤的方法 下面的才是對的
   skip_before_action :verify_authenticity_token
 
-  before_action :find_setbox, only: [:show, :edit, :update]
+  before_action :find_setbox, only: [:show, :edit, :update, :write, :judge]
   before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -71,7 +71,7 @@ class SetboxesController < ApplicationController
   end
 
   def search
-    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(9)
+    @setboxes = Setbox.joins(:cards, :user).includes(:cards, :user).search(params[:search]).sample(9)
   end
 
   def pullreq
@@ -79,14 +79,34 @@ class SetboxesController < ApplicationController
   end
 
   def write
-    @setboxes = Setbox.joins(:cards).includes(:cards).write(params[:write]).sample(1)
-    
-    # if params[:write] == card_def
-    #   redirect_to pullreq_setboxes_path, notice: "完全正確！"
-    # else
-    #   redirect_to write_setboxes_path, notice: "再試一次！"
-    # end
   end
+
+  def judge
+    @allwrong_answer = []
+    @allright_answer = []
+    params[:card].each do |key, value|
+      # byebug
+      card = Card.find_by(id: key)
+      if verify_answer(card, value)
+        @allright_answer << card
+      else
+        @allwrong_answer << card
+      end
+    end
+    # puts "==================="
+    # puts @allwrong_answer.map(&:id)
+    # puts "==================="
+    if @allwrong_answer.empty?
+      respond_to do |format|
+        format.js 
+      end
+    else
+      respond_to do |format|
+        format.js {render :write}
+      end
+    end
+  end
+
 
   private
 
@@ -102,5 +122,9 @@ class SetboxesController < ApplicationController
     unless user_signed_in?
       redirect_to new_user_session_path, notice: '請先登入會員'
     end
+  end
+
+  def verify_answer(card, value)
+    card.card_def == value
   end
 end
