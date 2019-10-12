@@ -4,24 +4,24 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center ">Sign In</h5>
+            <h5 class="card-title text-center "><%= t('.登入') %> </h5>
               <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="form-inputs">
-                  <%= f.input :email, label: 'Email address',
+                  <%= f.input :email, label: t('.信箱'),
                               required: false,
                               autofocus: true,
                               input_html: { autocomplete: "email" } %>
-                  <%= f.input :password, label: 'Password',
+                  <%= f.input :password, label: t('.密碼'),
                               required: false,
                               input_html: { autocomplete: "current-password" } %>
                   <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block rounded-pill">
                   <div class="form-actions">
-                    <%= f.button :submit, "Sign in", class:'text-light font-weight-bold' %>
+                    <%= f.button :submit, t(".登入"), class:'text-light font-weight-bold' %>
                   </div>
                 </button>
-                <div class="d-block text-center mt-2 small"><%= link_to "register", new_user_registration_path %></div>
+                <div class="d-block text-center mt-2 small"><%= link_to t(".註冊"), new_user_registration_path %></div>
                 <hr class="my-4">
               <% end %>
 

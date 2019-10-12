@@ -1,5 +1,21 @@
 class ApplicationController < ActionController::Base
   # after_action :store_action
+  protect_from_forgery with: :exception
+  before_action :set_locale
+  around_action :switch_locale
+ 
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def switch_locale(&action)
+    locale = params[:locale] || I18n.default_locale
+    I18n.with_locale(locale, &action)
+  end
+  
+  def default_url_options(options = {})
+     { :locale => I18n.locale }.merge options
+  end
 
   def after_sign_in_path_for(resource)
     stored_location_for(resource) || home_setboxes_path
@@ -18,3 +34,4 @@ class ApplicationController < ActionController::Base
   #   end
   # end
 end
+

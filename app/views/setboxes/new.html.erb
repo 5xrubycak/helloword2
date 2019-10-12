@@ -1,7 +1,7 @@
 <div class="container">
   <div class="d-flex justify-content-between py-4">
-    <h1>新增學習集</h1>
-      <%= link_to '回列表', home_setboxes_path, class: 'btn btn-danger btn-sm py-3 px-4' %>
+    <h1> <%= t('.新增學習集') %> </h1>
+      <%= link_to t('.回列表'), home_setboxes_path, class: 'btn btn-danger btn-sm py-3 px-4' %>
   </div>
   <%= render 'form', setbox: @setbox %>
 </div>
