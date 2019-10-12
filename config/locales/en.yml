@@ -35,68 +35,68 @@
 en:
   setboxes:
     card_fields:
-      單詞：apple: "WORD：蘋果"
-      定義：蘋果: "DEFENITION：apple"
+      單詞：apple: "TERM：蘋果"
+      定義：蘋果: "DEFINITION：apple"
 
     form:
-      學習集名稱: "SETBOX TITLE"
+      學習集名稱: "Study Set Title"
       科目，章節，單元: "SUBJECT, CHAPTER"
-      新增單詞: "CREATE NEW CARD"
-      + 新增單詞卡: "+ CREATE NEW CARD"
+      新增單詞: "Add New Term"
+      + 新增單詞卡: "+ ADD CARD"
       建立: "SUBMIT"
 
     perfect:
       對答案時間: "SCORE:"
       恭喜您全部答對了！: "YOU GOT A PERFECT SCORE!"
       重新挑戰: "TRY AGAIN"
-      回單詞卡列表: "BACK TO CARD LIST"
+      回單詞卡列表: "RETURN TO CARD LIST"
 
     unperfect:
       這題寫錯囉！: "INCORRECT!"
 
     edit:
-      編輯學習集: "EDIT SETBOX"
-      回列表: "BACK TO SETBOX LIST"
+      編輯學習集: "EDIT STUDY SET"
+      回列表: "BACK TO SET LIST"
 
     home:
-      學習集列表: "SETBOX LIST"
-      新增學習集: "CREATE NEW SETBOX"
+      學習集列表: "STUDY SET LIST"
+      新增學習集: "CREATE"
 
     index:
-      你是忘記了，還是記不起來？: "Can't remember things effectively?"
-      善用零碎時間，記住任何你想記住的事物。: "Make good use of time and remember anything you want to remember."
-      學習集: "SETBOX"
+      你是忘記了，還是記不起來？: "Having hard time learning new words?"
+      善用零碎時間，記住任何你想記住的事物。: "Making good use of time for everything you want to remember."
+      學習集: "STUDY SET"
       作者: "AUTHOR"
-      搜尋學習集: "SEARCH SETBOX"
+      搜尋學習集: "SEARCH STUDY SET"
       搜尋: "SEARCH"
 
     new:
-      新增學習集: "CREATE NEW SETBOX"
-      回列表: "BACK TO SETBOX LIST"
+      新增學習集: "Create A New Study Set"
+      回列表: "BACK TO SET LIST"
 
     search:
-      搜尋學習集: "SEARCH SETBOX"
+      搜尋學習集: "SEARCH STUDY SET"
       搜尋: "SEARCH"
-      學習集: "SETBOX"
+      學習集: "STUDY SET"
       作者: "AUTHOR"
-      # 單字：: "WORD:"
+      單字：: "WORD：%{card}"
 
     show:
-      學習集名稱: "SETBOX TITLE"
+      學習集名稱: "STUDY TITLE"
       分享: "SHARE"
-      分享此學習集: "SHARE THIS SETBOX"
+      分享此學習集: "SHARE THIS STUDY SET"
       複製連結: "COPY"
       功能: "OPTION"
-      筆試: "TEST"
-      複製: "COPY"
+      筆試: "QUIZ"
+      複製: "CLONE"
       刪除: "DELETE"
       確定嗎: "ARE YOU SURE?"
-      本學習集中的詞語: "CARD AMOUNT"
-      新增或移除單詞卡: "CREATE OR DELETE CARDS"
+      本學習集中的詞語: "Terms in this set"
+      新增或移除單詞卡: "ADD OR REMOVE TERMS"
 
     write:
-      筆試題: "ENTER TEST"
-      # 單字：: "WORD%{word}"
+      筆試題: "ENTER QUIZ"
+      單字：: "WORD：%{card}"
       請輸入答案: "ENTER YOUR ANSWER"
       送出: "SUBMIT"
 
@@ -110,3 +110,46 @@ en:
         註冊: "REGISTER"
         登入: "SIGN_IN"
 
+
+  users:
+    registrations:
+      new:
+        註冊: "Register"
+        信箱: "Email address"
+        密碼: "Password"
+        密碼確認: "Re-enter password"
+        登入: "Sign In"
+
+      edit:
+        修改個人資料: "Account settings"
+        名字: "Name"
+        信箱: "Email address"
+        密碼: "Password"
+        密碼確認: "Re-enter password"
+        更新: "Update"
+
+    sessions:
+      new:
+        登入: "Sign In"
+        信箱: "Email address"
+        密碼: "Password"
+        註冊: "register"
+        # 記住我: "Remember me"
+        
+
+
+  devise:
+    registrations:
+      new:
+        註冊: "Register"
+        信箱: "Email address"
+        密碼: "Password"
+        密碼確認: "Re-enter password"
+        登入: "Sign In"
+
+    sessions:
+      new:
+        登入: "Sign In"
+        信箱: "Email address"
+        密碼: "Password"
+        註冊: "register"

@@ -10,7 +10,7 @@
         
           <div class="row mb-4">
             <div class="col-lg-5 col-sm-12">
-              <h4><%= "單字：#{card.card_word}" %></h4>
+              <h4><%= t('單字：', card: card.card_word) %></h4>
             </div>
             <div class="col-lg-7 col-sm-12">
               <%= text_field_tag :id, 

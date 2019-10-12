@@ -29,7 +29,7 @@
             </p>
             <% setbox.cards.each do |card| %>
               <p class="card-text text-dark">
-                <%= "單字： #{card.card_word}" if params[:search].present? %>
+                <%= t('單字：', card: card.card_word) if params[:search].present? %>
               </p>
             <% end %>
           </div>
