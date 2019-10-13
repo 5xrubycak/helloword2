@@ -79,7 +79,7 @@ en:
       搜尋: "SEARCH"
       學習集: "STUDY SET"
       作者: "AUTHOR"
-      單字：: "WORD：%{card}"
+      單字：: "TERM："
 
     show:
       學習集名稱: "STUDY TITLE"
@@ -96,7 +96,7 @@ en:
 
     write:
       筆試題: "ENTER QUIZ"
-      單字：: "WORD：%{card}"
+      單字：: "TERM："
       請輸入答案: "ENTER YOUR ANSWER"
       送出: "SUBMIT"
 
