@@ -1,0 +1,155 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+# en:
+#   hello: "Hello world"
+
+jp:
+  setboxes:
+    card_fields:
+      單詞：apple: "単語：apple"
+      定義：蘋果: "定義：りんご"
+
+    form:
+      學習集名稱: "タイトル"
+      科目，章節，單元: "科目名、章、ユニット"
+      新增單詞: "単語を追加"
+      + 新增單詞卡: "+ カードを追加"
+      建立: "作成する"
+
+    perfect:
+      對答案時間: "点数:"
+      恭喜您全部答對了！: "全問正解！"
+      重新挑戰: "再チャレンジ"
+      回單詞卡列表: "カードリストに戻る"
+
+    unperfect:
+      這題寫錯囉！: "間違ってるよ！"
+
+    edit:
+      編輯學習集: "学習セットを編集する"
+      回列表: "セットリストに戻る"
+
+    home:
+      學習集列表: "学習セットリスト"
+      新增學習集: "新しい学習セットを作成する"
+
+    index:
+      你是忘記了，還是記不起來？: "英単語がなかなか覚えられない？"
+      善用零碎時間，記住任何你想記住的事物。: "スキマ時間を活用して、暗記力アップ！"
+      學習集: "学習セット"
+      作者: "作成者"
+      搜尋學習集: "学習セットを検索"
+      搜尋: "検索"
+
+    new:
+      新增學習集: "新しい学習セットを作成する"
+      回列表: "セットリストに戻る"
+
+    search:
+      搜尋學習集: "学習セットを検索"
+      搜尋: "検索"
+      學習集: "学習セット"
+      作者: "作成者"
+      單字：: "単語："
+
+    show:
+      學習集名稱: "タイトル"
+      分享: "共有する"
+      分享此學習集: "学習セットを共有する"
+      複製連結: "コピー"
+      關閉視窗: "閉じる"
+      功能: "オプション"
+      筆試: "テスト"
+      複製: "コピー"
+      刪除: "削除"
+      確定嗎: "削除しますか？"
+      本學習集中的詞語: "このセットの単語"
+      新增或移除單詞卡: "単語の追加または削除"
+
+    write:
+      筆試題: "テスト"
+      單字：: "単語："
+      請輸入答案: "答えを入力ください"
+      送出: "解答をチェック"
+    
+  shared:
+    frontend:
+      navbar:
+        搜尋: "検索"
+        建立: "作成する"
+        個人資料: "アカウント"
+        登出: "ログアウト"
+        註冊: "新規登録"
+        登入: "ログイン"
+        語言: "言語"
+
+  users:
+    registrations:
+      new:
+        註冊: "新規登録"
+        信箱: "メールアドレス"
+        密碼: "パスワード"
+        密碼確認: "パスワード再入力"
+        登入: "ログイン"
+
+      edit:
+        修改個人資料: "設定を編集する"
+        名字: "ユーザ名"
+        信箱: "メールアドレス"
+        密碼: "パスワード"
+        密碼確認: "パスワード再入力"
+        更新: "更新する"
+
+    sessions:
+      new:
+        登入: "ログイン"
+        信箱: "メールアドレス"
+        密碼: "パスワード"
+        註冊: "新規登録"
+        # 記住我: "記住我"
+
+
+  devise:
+    registrations:
+      new:
+        註冊: "新規登録"
+        信箱: "メールアドレス"
+        密碼: "パスワード"
+        密碼確認: "パスワード再入力"
+        登入: "ログイン"
+
+    sessions:
+      new:
+        登入: "ログイン"
+        信箱: "メールアドレス"
+        密碼: "パスワード"
+        註冊: "新規登録"

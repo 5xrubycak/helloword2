@@ -40,7 +40,7 @@ en:
 
     form:
       學習集名稱: "Study Set Title"
-      科目，章節，單元: "SUBJECT, CHAPTER"
+      科目，章節，單元: "SUBJECT, CHAPTER, UNIT"
       新增單詞: "Add New Term"
       + 新增單詞卡: "+ ADD CARD"
       建立: "SUBMIT"
@@ -79,13 +79,14 @@ en:
       搜尋: "SEARCH"
       學習集: "STUDY SET"
       作者: "AUTHOR"
-      單字：: "WORD：%{card}"
+      單字：: "TERM："
 
     show:
       學習集名稱: "STUDY TITLE"
       分享: "SHARE"
       分享此學習集: "SHARE THIS STUDY SET"
       複製連結: "COPY"
+      關閉視窗: "CLOSE"
       功能: "OPTION"
       筆試: "QUIZ"
       複製: "CLONE"
@@ -96,7 +97,7 @@ en:
 
     write:
       筆試題: "ENTER QUIZ"
-      單字：: "WORD：%{card}"
+      單字：: "TERM："
       請輸入答案: "ENTER YOUR ANSWER"
       送出: "SUBMIT"
 
@@ -109,6 +110,7 @@ en:
         登出: "SIGN_OUT"
         註冊: "REGISTER"
         登入: "SIGN_IN"
+        語言: "LANGUAGE"
 
 
   users:

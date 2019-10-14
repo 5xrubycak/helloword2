@@ -32,13 +32,17 @@
         <li class="nav-item">
           <%= link_to t(".登出"), destroy_user_session_path, class: 'nav-link', method: 'delete' %>
         </li>
-        <li class="nav-item">
-          <% if I18n.locale.to_s == "en" %>
-            <%= link_to('中文', :locale => 'zh', class: 'nav-link') %>
-          <% else %>
-            <%= link_to('English', :locale => 'en', class: 'nav-link') %>
-          <% end %>
-        </li>
+
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <%= t('.語言') %> 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item"><%= link_to('中文', :locale => 'zh', class: 'nav-link') %></a>
+          <a class="dropdown-item"><%= link_to('日本語', :locale => 'jp', class: 'nav-link') %></a>
+          <a class="dropdown-item"><%= link_to('English', :locale => 'en', class: 'nav-link') %></a>
+          <div class="dropdown-divider"></div>
+        </div>
       <% else %>
         <li class="nav-item">
           <%= link_to t(".註冊"), new_user_registration_path, class: 'nav-link' %>
@@ -46,13 +50,16 @@
         <li class="nav-item">
           <%= link_to t(".登入"), new_user_session_path, class: 'nav-link' %>
         </li>
-        <li class="nav-item">
-          <% if I18n.locale.to_s == "en" %>
-            <%= link_to('中文', :locale => 'zh', class: 'nav-link') %>
-          <% else %>
-            <%= link_to('English', :locale => 'en', class: 'nav-link') %>
-          <% end %>
-        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <%= t('.語言') %> 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item"><%= link_to('中文', :locale => 'zh', class: 'nav-link') %></a>
+          <a class="dropdown-item"><%= link_to('日本語', :locale => 'jp', class: 'nav-link') %></a>
+          <a class="dropdown-item"><%= link_to('English', :locale => 'en', class: 'nav-link') %></a>
+          <div class="dropdown-divider"></div>
+        </div>
       <% end %>
     
     </ul>

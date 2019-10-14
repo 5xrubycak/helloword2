@@ -21,6 +21,11 @@ class ApplicationController < ActionController::Base
     stored_location_for(resource) || home_setboxes_path
   end  
 
+  def extract_locale_from_tld
+    parsed_locale = request.subdomains.first
+    I18n.available_locales.map(&:to_s).include?(parsed_locale) ? parsed_locale : nil
+  end
+
   # def store_action
   #   return unless request.get? 
   #   if (request.path != "/users/sign_in" &&
