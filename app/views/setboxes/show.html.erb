@@ -20,7 +20,7 @@
             <div class="modal-body">
               <div class="row">
                 <div class="col-9">
-                  <input id="urltext" type="text" value="<%= 'localhost:3000' + setbox_path(@setbox) %>" style="height: 100%; width:100% ">
+                  <input id="urltext" type="text" value="<%= 'https://helloword.space' + setbox_path(@setbox) %>" style="height: 100%; width:100% ">
                 </div>
                 <div class="col-3"> 
                   <button onclick="urlFunction()"type="button" class="btn btn-warning"><%= t('.複製連結') %></button>
@@ -44,14 +44,14 @@
         <a href="#" class="list-group-item list-group-item-action list-width active"><%= t('.功能') %></a>
           <% if user_signed_in? %>
             <%= link_to t(".筆試"), write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
-            <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
+            <%= link_to "編輯", edit_setbox_path, class: "list-group-item list-group-item-action list-width" %>
             <%= link_to t(".複製"), copy_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action list-width" %>
             <% if current_user.id === @setbox.user_id %>
               <%= link_to t(".刪除"), setbox_path(@setbox), method:'delete', data: {confirm:t('.確定嗎')}, class: "list-group-item list-group-item-action list-width "%>
             <% end %>
           <% else %>
             <%= link_to t(".筆試"), write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
-            <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
+            <%= link_to "編輯", edit_setbox_path, class: "list-group-item list-group-item-action list-width" %>
             <%= link_to t(".複製"), new_setbox_path, class: "list-group-item list-group-item-action list-width" %>
         <% end %>
       </div>
@@ -107,7 +107,7 @@
       </div>
     </div> 
   </div>
-  <hr class="col-12 mt-5">
+  <hr class="mt-5">
 </div>
 
 <div class="bg-gray">
