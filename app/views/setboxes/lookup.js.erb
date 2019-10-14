@@ -1,19 +1,18 @@
 $( document ).ready(function() {
 
-var result = '<%= @result%>';
-
-var card_def_id = '<%= form_tag_id(f.object_name, :card_def) %>'
-
-var card_def_id = '<%= form_tag_id(f.object_name, :card_def) %>'
-
-// console.log('<%= @card_def_id %>')
+// var result = '<%= @result%>';
+// var def_id = '<%= @def_id%>';
+// var word_id = '<%= @word_id%>'; 
 
 console.log('lookup.js.erb');
-console.log(result);
 
-$(`#${card_word_id}`).on('blur', function(){
-  console.log('lookup inside');
-  console.log(result);
-  $(`#${card_def_id}`).val(result);  
+// console.log(result);
+// console.log(def_id);
+// console.log(word_id);
+
+// $(`#${word_id}`).on('blur', function(){
+//   console.log('lookup inside');
+//   console.log(result);
+//   $(`#${def_id}`).val(result);  
                 
 });

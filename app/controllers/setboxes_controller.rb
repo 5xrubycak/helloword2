@@ -47,11 +47,14 @@ class SetboxesController < ApplicationController
 
   def lookup
     # @setbox = Setbox.new
+    @def_id = params[:def_id]
+    @word_id = params[:word_id]
     @card_text = params[:aa]
     @result = translate_text(@card_text).text
     # @object_name = sanitized_object_name(@setbox)
     # @card_def_id = form_tag_id(, :card_word)
     # debugger
+    byebug
   end
 
   def copy
