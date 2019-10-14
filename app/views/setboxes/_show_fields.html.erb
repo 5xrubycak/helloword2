@@ -1,23 +1,23 @@
 <div class='nested-fields'>
   <div class="row d-flex align-items-center">
-    <div class="col-lg-5 col-sm-11" id="english-<%= f.object.id %>">
+    <div class="col-10 col-lg-5 col-sm-11" id="english-<%= f.object.id %>">
       <li class="list-group-item m-2 ">
         <%= f.object.card_word %>
       </li> 
     </div>
-    <div class="col-lg-1 col-sm-1">
+    <div class="col-1 col-lg-1 col-sm-1">
       <button type="button" 
               class="english btn btn-link border border-dark" 
               value=<%= f.object.id %>>
       <i class="fas fa-play"></i>
       </button>
     </div>
-    <div class="col-lg-5 col-sm-11" id="chinese-<%= f.object.id %>">
+    <div class="col-10 col-lg-5 col-sm-11" id="chinese-<%= f.object.id %>">
       <li class="list-group-item m-2 ">
         <%= f.object.card_def %>
       </li>
     </div>
-    <div class="col-lg-1 col-sm-1">
+    <div class="col-1 col-lg-1 col-sm-1">
       <button type="button" 
               class="chinese btn btn-link border border-dark" 
               value=<%= f.object.id %>>
