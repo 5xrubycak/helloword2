@@ -26,6 +26,7 @@ class SetboxesController < ApplicationController
   end
 
   def show
+    @currentsetbox = current_user.setboxes.sample(5).uniq
   end
 
   def edit
@@ -111,7 +112,7 @@ class SetboxesController < ApplicationController
   private
 
   def setbox_params
-    setbox_clean_params = params.require(:setbox).permit(:title, cards_attributes: [:id, :card_word, :card_def ,:_destroy])
+    setbox_clean_params = params.require(:setbox).permit(:title, :description, cards_attributes: [:id, :card_word, :card_def ,:_destroy])
   end
 
   def find_setbox

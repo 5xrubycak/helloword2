@@ -80,28 +80,28 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item active">
+          <div class="carousel-item">
             <div class="card p-5">
               <div class="card-body text-center">
                 <h1> <%= @setbox.cards.sample.card_word %> </h1>
               </div>
             </div>
           </div>
-          <div class="carousel-item active">
+          <div class="carousel-item">
             <div class="card p-5">
               <div class="card-body text-center">
                 <h1> <%= @setbox.cards.sample.card_word %> </h1>
               </div>
             </div>
           </div>
-          <div class="carousel-item active">
+          <div class="carousel-item">
             <div class="card p-5">
               <div class="card-body text-center">
                 <h1> <%= @setbox.cards.sample.card_word %> </h1>
               </div>
             </div>
           </div>
-          <div class="carousel-item active">
+          <div class="carousel-item">
             <div class="card p-5">
               <div class="card-body p-5 text-center">
                 <h1> <%= @setbox.cards.sample.card_word %> </h1>
@@ -121,6 +121,11 @@
     </div> 
     <div class="col-sm-12 col-lg-6">
       <h5>我的其他學習集：</h5>
+      <ul>
+        <% @currentsetbox.each do |item| %>
+          <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>
