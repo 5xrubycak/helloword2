@@ -3,5 +3,5 @@
     <h1><%= t('.編輯學習集') %></h1>
       <%= link_to t('.返回'), setbox_path, class: 'btn btn-danger btn-sm py-3 px-4' %>
   </div>
-  <%= render 'form', setbox: @setbox %>
+  <%= render 'form', url:setbox_path, setbox: @setbox %>
 </div>

@@ -70,3 +70,9 @@
 .bg-gray{
   background-color: #F0F0F0;
 }
+
+@media (max-width: 767px){
+  .nested-fields{
+    margin-bottom: 25px;
+  }
+}
