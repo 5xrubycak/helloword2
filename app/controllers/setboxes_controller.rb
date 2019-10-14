@@ -54,7 +54,7 @@ class SetboxesController < ApplicationController
     # @object_name = sanitized_object_name(@setbox)
     # @card_def_id = form_tag_id(, :card_word)
     # debugger
-    byebug
+    # byebug
   end
 
   def copy

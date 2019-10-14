@@ -1,18 +1,8 @@
 $( document ).ready(function() {
 
-// var result = '<%= @result%>';
-// var def_id = '<%= @def_id%>';
-// var word_id = '<%= @word_id%>'; 
+  var result = '<%= @result%>';
+  var def_id = '<%= @def_id%>';
+  
+  $(`#${def_id}`).val(result);
 
-console.log('lookup.js.erb');
-
-// console.log(result);
-// console.log(def_id);
-// console.log(word_id);
-
-// $(`#${word_id}`).on('blur', function(){
-//   console.log('lookup inside');
-//   console.log(result);
-//   $(`#${def_id}`).val(result);  
-                
 });

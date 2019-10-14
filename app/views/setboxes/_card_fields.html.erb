@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-6">
 
-      <%= f.object_name %>
+      <%#= f.object_name %>
 
       <%# <%= form_tag_id(f.object_name, :card_word) %> 
 
@@ -18,43 +18,17 @@
 </div>
 
 
-
-<%#= link_to "Ajax Start", lookup_setboxes_path(aa: 456), id: "ajax", remote: true %>
-
-<%= link_to "Ajax Start", lookup_setboxes_path(aa: 456, word_id: form_tag_id(f.object_name, :card_word)), id: "ajax", remote: true %>
-
-<%#= link_to "Ajax Start", lookup_setboxes_path(aa: 456, word_id: form_tag_id(f.object_name, :card_word), def_id: form_tag_id(f.object_name, :card_def)), id: "ajax", remote: true %>
-
 <script>
 $( document ).ready(function() {
+  const card_word_id = '<%= form_tag_id(f.object_name, :card_word) %>';
+  const card_def_id = '<%= form_tag_id(f.object_name, :card_def) %>';
+  const card_word = document.querySelector(`#${card_word_id}`);
 
-  var card_word_id = '<%= form_tag_id(f.object_name, :card_word) %>'
-  var card_def_id = '<%= form_tag_id(f.object_name, :card_def) %>'
-
-  console.log('<%= f.object_name %>')  
-  // console.log(card_word_id);
-  // console.log(card_def_id);
-  // console.log("_card_field.html.erb");
-
-  
-// url.replace(/aa=(\w+)&?/, 'aa=456')
-  $(`#${card_word_id}`).on('change', function(){
-    console.log("_card_field.html.erb_INSIDE");
-    $('#ajax').attr('href', '/helloword/lookup?aa='+$(`#${card_word_id}`).val());
-
-    $("#ajax").click();
-      
+  card_word.addEventListener('blur', () => {
+    document.querySelector('#ajax').href = `/helloword/lookup?aa=${card_word.value}&def_id=${card_def_id}&word_id=${card_word_id}`;
+    document.querySelector('#ajax').click();
   });
+
 });
-
-  // document.querySelectorAll('.english').forEach((btn, index) => {
-  //   btn.addEventListener('click', (event) => {
-  //     const id = event.target.tagName.toLowerCase() != 'button' ? event.target.parentNode.value : event.target.value;
-  //     const value = document.querySelector(`#english-${id}`).innerText;
-  //     speak('en-US', 'Alex', value);
-  // }, false);
-  // })
-
-
 </script>
 
