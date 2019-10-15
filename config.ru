@@ -7,13 +7,6 @@ run Rails.application
 use Rack::Cors do
   allow do
     origins '*'
-    resource '/helloword/json',
-        methods: [:post]
-    resource '/api/v1/login',
-        methods: [:post]
-    resource '/api/v1/addsetbox',
-        methods: [:post]
-    resource '/api/v1/logout',
-        methods: [:post]
+    resource '*', headers: :any, methods: [:get, :post, :options]
   end
 end
