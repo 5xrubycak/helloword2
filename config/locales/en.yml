@@ -155,3 +155,9 @@ en:
         信箱: "Email address"
         密碼: "Password"
         註冊: "register"
+
+  errors:
+    messages:
+      blank: "can't be blank"
+      too_long: "20 characters is the maximum allowed"
+      # invalid: "%{attribute} isn't valid"

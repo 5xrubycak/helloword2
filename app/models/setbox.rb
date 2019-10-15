@@ -3,9 +3,9 @@ class Setbox < ApplicationRecord
   has_many :cards, inverse_of: :setbox, :dependent => :destroy
   accepts_nested_attributes_for :cards, reject_if: :all_blank, allow_destroy: true
 
-  validates :title, presence: true
-  validates :title, length: { maximum: 50,
-    too_long: "最長不能超過50個字喔！" }
+  validates :title, presence: { message: :blank} 
+  validates :title, length: { maximum: 20,
+    message: :too_long} 
 
   def self.search(search) 
     if search
