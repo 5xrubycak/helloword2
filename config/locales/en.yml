@@ -35,15 +35,15 @@
 en:
   setboxes:
     card_fields:
-      單詞：apple: "TERM：蘋果"
-      定義：蘋果: "DEFINITION：apple"
+      單詞：apple: "Term：蘋果"
+      定義：蘋果: "Definition：apple"
 
     form:
-      學習集名稱: "Study Set Title"
-      科目，章節，單元: "SUBJECT, CHAPTER, UNIT"
-      新增單詞: "Add New Term"
-      + 新增單詞卡: "+ ADD CARD"
-      儲存: "SUBMIT"
+      學習集名稱: "Study set title"
+      科目，章節，單元: "Subject, Chapter, Uit"
+      新增單詞: "Add new term"
+      + 新增單詞卡: "+ Add card"
+      儲存: "Submit"
 
     perfect:
       對答案時間: "SCORE:"
@@ -52,65 +52,69 @@ en:
       回單詞卡列表: "RETURN TO CARD LIST"
 
     unperfect:
-      這題寫錯囉！: "INCORRECT!"
+      這題寫錯囉！: "Incorrect!"
 
     edit:
-      編輯學習集: "EDIT STUDY SET"
-      回列表: "BACK TO SET LIST"
+      編輯學習集: "Edit study set"
+      回列表: "Back to study list"
 
     home:
-      學習集列表: "STUDY SET LIST"
-      新增學習集: "CREATE"
+      學習集列表: "Study set list"
+      新增學習集: "Create"
 
     index:
       你是忘記了，還是記不起來？: "Having hard time learning new words?"
       善用零碎時間，記住任何你想記住的事物。: "Making good use of time for everything you want to remember."
-      學習集: "STUDY SET"
-      作者: "AUTHOR"
-      搜尋學習集: "SEARCH STUDY SET"
-      搜尋: "SEARCH"
+      學習集: "Study set"
+      作者: "Author"
+      搜尋學習集: "Search study set"
+      搜尋: "Search"
 
     new:
-      新增學習集: "Create A New Study Set"
-      回列表: "BACK TO SET LIST"
+      新增學習集: "Create a new study set"
+      回列表: "Back to set list"
 
     search:
-      搜尋學習集: "SEARCH STUDY SET"
-      搜尋: "SEARCH"
-      學習集: "STUDY SET"
-      作者: "AUTHOR"
-      單字：: "TERM："
+      搜尋學習集: "Search study set"
+      搜尋: "Search"
+      學習集: "Study set"
+      作者: "Author"
+      單字：: "Term："
 
     show:
-      學習集名稱: "STUDY TITLE"
-      分享: "SHARE"
-      分享此學習集: "SHARE THIS STUDY SET"
-      複製連結: "COPY"
-      關閉視窗: "CLOSE"
-      功能: "OPTION"
-      筆試: "QUIZ"
-      複製: "CLONE"
-      刪除: "DELETE"
-      確定嗎: "ARE YOU SURE?"
+      學習集名稱: "Study set title"
+      分享: "Share"
+      分享此學習集: "Share this study set"
+      複製連結: "Copy"
+      關閉視窗: "Close"
+      編輯: "Edit"
+      筆試: "Quiz"
+      複製: "Copy"
+      刪除: "Delete"
+      確定嗎: "Are you sure?"
       本學習集中的詞語: "Terms in this set"
-      新增或移除單詞卡: "ADD OR REMOVE TERMS"
+      新增或移除單詞卡: "Add or remove sets"
+      最近瀏覽的學習集: "Recently viewed"
+      我的其他學習集: "My sets"
+      其他使用者的學習集: "Other sets"
 
     write:
-      筆試題: "ENTER QUIZ"
-      單字：: "TERM："
-      請輸入答案: "ENTER YOUR ANSWER"
-      送出: "SUBMIT"
+      筆試題: "Enter quiz"
+      單字：: "Term："
+      請輸入答案: "Enter your answer"
+      送出: "Submit"
 
   shared:
     frontend:
       navbar:
-        搜尋: "SEARCH"
-        建立: "CREATE"
-        個人資料: "PERSONAL"
-        登出: "SIGN_OUT"
-        註冊: "REGISTER"
-        登入: "SIGN_IN"
-        語言: "LANGUAGE"
+        搜尋: "Search"
+        建立: "Create"
+        個人資料: "Personal"
+        登出: "Sign_out"
+        註冊: "Register"
+        登入: "Sign_in"
+        語言: "Language"
+        我的學習集: "My study set"
 
 
   users:
