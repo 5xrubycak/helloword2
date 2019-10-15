@@ -71,6 +71,7 @@ class SetboxesController < ApplicationController
 
   def home
     @setbox = current_user.setboxes
+    @setboxnew = Setbox.new
   end
 
   def search
