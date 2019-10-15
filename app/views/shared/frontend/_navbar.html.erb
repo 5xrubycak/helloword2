@@ -1,3 +1,22 @@
+<style>
+.dropdown-menu > a{
+  font-size: 18px;
+  color: #111;
+}
+.dropdown-menu{
+  font-size: 18px;
+  border: none;
+  background-color: #ccc;
+}
+.dropdown-menu{
+  min-width: 5rem;
+}
+.dropdown-item{
+  padding: 0;
+}
+
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
   <%= link_to "HelloWord", root_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,11 +50,10 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <%= t('.語言') %> 
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item"><%= link_to('中文', :locale => 'zh', class: 'nav-link') %></a>
-          <a class="dropdown-item"><%= link_to('日本語', :locale => 'jp', class: 'nav-link') %></a>
-          <a class="dropdown-item"><%= link_to('English', :locale => 'en', class: 'nav-link') %></a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu p-2" aria-labelledby="navbarDropdown">
+          <%= link_to('中文', :locale => 'zh', class: 'dropdown-item') %><br>
+          <%= link_to('日本語', :locale => 'jp', class: 'dropdown-item') %><br>
+          <%= link_to('English', :locale => 'en', class: 'dropdown-item') %>
         </div>
       <% else %>
         <li class="nav-item">
@@ -48,11 +66,10 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <%= t('.語言') %> 
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item"><%= link_to('中文', :locale => 'zh', class: 'nav-link') %></a>
-          <a class="dropdown-item"><%= link_to('日本語', :locale => 'jp', class: 'nav-link') %></a>
-          <a class="dropdown-item"><%= link_to('English', :locale => 'en', class: 'nav-link') %></a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu p-2" aria-labelledby="navbarDropdown">
+          <%= link_to('中文', :locale => 'zh', class: 'dropdown-item') %><br>
+          <%= link_to('日本語', :locale => 'jp', class: 'dropdown-item') %><br>
+          <%= link_to('English', :locale => 'en', class: 'dropdown-item') %>
         </div>
       <% end %>
     
