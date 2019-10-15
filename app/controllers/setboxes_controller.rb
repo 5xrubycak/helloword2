@@ -59,9 +59,9 @@ class SetboxesController < ApplicationController
 
   def copy
     @setbox = Setbox.find_by(id: params[:id])
-    # dup_setbox=Setbox.find(6).dup
-    # current_user.id
     @dup_setbox = @setbox.dup
+    new_title = @setbox.dup.title + "-副本"
+    @dup_setbox.title = new_title
     @dup_setbox.save
     @setbox.cards.each do |card|
     # dup_card=Card.find(71).dup
