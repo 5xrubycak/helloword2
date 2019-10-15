@@ -40,7 +40,7 @@
           <%= link_to t(".我的學習集"), home_setboxes_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to t(".個人資料"), edit_user_registration_path, class: 'nav-link' %>
+          <%= link_to current_user.name, edit_user_registration_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
           <%= link_to t(".登出"), destroy_user_session_path, class: 'nav-link', method: 'delete' %>

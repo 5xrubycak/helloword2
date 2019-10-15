@@ -8,10 +8,6 @@
   </div>
   <div class="">
     <% if user_signed_in? %>
-      <%= link_to edit_setbox_path, :method => 'get',:class => "btn mr-2 btn-primary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => '修改' do %>
-        <i class="far fa-edit"></i>
-      <% end %>
-
       <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
         <i class="far fa-copy"></i>
       <% end %>
@@ -20,13 +16,11 @@
         <%= link_to setbox_path, :method => 'delete', :data => { :confirm => t('.確定嗎') }, :class => "btn mr-2 btn-danger",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".刪除") do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
+        <%= link_to edit_setbox_path, :method => 'get', :class => "btn mr-2 btn-primary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => '修改' do %>
+          <i class="far fa-edit"></i>
+        <% end %>
       <% end %>
-
     <% else %>
-      <%= link_to edit_setbox_path, :method => 'get', :class => "btn mr-2 btn-primary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => '修改' do %>
-        <i class="far fa-edit"></i>
-      <% end %>
-
       <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
         <i class="far fa-copy"></i>
       <% end %>
@@ -137,27 +131,36 @@
         </a>
       </div>
     </div>  
-    
-    <% if current_user.id === @setbox.user_id %>
+    <% if user_signed_in? %>
+      <% if current_user.id === @setbox.user_id %>
+        <div class="col-sm-12 col-lg-3 displaynone">
+        <h5>我的其他學習集</h5>
+          <ul>
+            <% @currentsetbox.each do |item| %>
+              <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% else %>
       <div class="col-sm-12 col-lg-3 displaynone">
-      <h5>我的其他學習集</h5>
-        <ul>
-          <% @currentsetbox.each do |item| %>
-            <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
-          <% end %>
-        </ul>
-      </div>
+        <h5> <%= @setbox.user.name %>的其他學習集</h5>
+          <ul>
+            <% @othersetbox.each do |item| %>
+              <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
     <% else %>
-    <div class="col-sm-12 col-lg-3 displaynone">
-      <h5> 該使用者的學習集</h5>
-        <ul>
-          <% @othersetbox.each do |item| %>
-            <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
-          <% end %>
-        </ul>
-      </div>
+      <div class="col-sm-12 col-lg-3 displaynone">
+        <h5> <%= @setbox.user.name %> </h5>
+          <ul>
+            <% @othersetbox.each do |item| %>
+              <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
+              <% end %>
+          </ul>
+        </div>
     <% end %>
-
   </div>
 </div>
 

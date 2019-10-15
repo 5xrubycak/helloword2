@@ -8,7 +8,7 @@ class SetboxesController < ApplicationController
 
   def index
     @setbox = Setbox.all
-    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(9)
+    @setboxes = Setbox.joins(:cards).includes(:cards).search(params[:search]).sample(6)
   end
 
   def new
@@ -26,9 +26,15 @@ class SetboxesController < ApplicationController
   end
 
   def show
-    @currentsetbox = current_user.setboxes.sample(5).uniq
-    @othersetbox = Setbox.where.not(user_id: current_user.id).sample(5).uniq
-    @suggestsetbox = current_user.setboxes.sample(2).uniq
+    if user_signed_in?
+      @currentsetbox = current_user.setboxes.sample(3).uniq
+      @othersetbox = Setbox.where.not(user_id: current_user.id).sample(5).uniq
+      @suggestsetbox = current_user.setboxes.sample(3).uniq
+    else
+      @suggestsetbox = Setbox.all.sample(3).uniq
+      @othersetbox = Setbox.all.sample(3).uniq
+      # Setbox.where.not(user_id: current_user.id).sample(5).uniq
+    end
   end
 
   def edit
@@ -70,7 +76,11 @@ class SetboxesController < ApplicationController
   end
 
   def home
-    @setbox = current_user.setboxes
+    if user_signed_in?
+      @setbox = current_user.setboxes.sample(3).uniq
+    else
+      @setbox = Setbox.all.sample(3).uniq
+    end
   end
 
   def search

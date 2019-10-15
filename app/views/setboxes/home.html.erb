@@ -4,16 +4,13 @@
     <%= link_to t(".新增學習集"), new_setbox_path, class: 'btn btn-primary btn-sm py-3 px-4' %>
   </div>
 
-  <%# 將此頁面用id=home綁住，是為了在show頁面時可以正常呈現 %>
-  <div id='home'>
     <div class="row">
       <% @setbox.each do |setbox| %>
         <div class="col-lg-4 col-sm-12 my-2">
           <div class="card cardshadow">
             <div class="card-body border border-dark">
               <h5 class="card-title d-flex justify-content-between">
-                <%# 這裡加 class:'setbox' 是為了要連結到 bindSetboxButton() %>
-                <%= link_to setbox.title, setbox_path(setbox), class:'setbox ' %>
+                <%= link_to setbox.title, setbox_path(setbox) %>
                 (<%= setbox.cards.count %>)
               </h5>
               <p class="card-text">
@@ -29,5 +26,4 @@
         </div>
       <% end %> 
     </div>
-  </div>
 </div>
