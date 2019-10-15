@@ -8,22 +8,22 @@ use Rack::Cors do
   allow do
     origins '*'
             # regular expressions can be used here
-    resource '/helloword/json',
+    resource 'https://helloword.space/helloword/json',
         methods: [:post]
         # expose: ['Some-Custom-Response-Header'],
         # max_age: 600
         # headers to expose
-    resource '/api/v1/login',
+    resource 'https://helloword.space/helloword/api/v1/login',
         methods: [:post]
         # expose: ['Some-Custom-Response-Header'],
         # max_age: 600
         # headers to expose
-    resource '/api/v1/addsetbox',
+    resource 'https://helloword.space/helloword/api/v1/addsetbox',
         methods: [:post]
         # expose: ['Some-Custom-Response-Header'],
         # max_age: 600
         # headers to expose
-    resource '/api/v1/logout',
+    resource 'https://helloword.space/helloword/api/v1/logout',
         methods: [:post]
         # expose: ['Some-Custom-Response-Header'],
         # max_age: 600
