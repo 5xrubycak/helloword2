@@ -43,7 +43,7 @@ en:
       科目，章節，單元: "SUBJECT, CHAPTER, UNIT"
       新增單詞: "Add New Term"
       + 新增單詞卡: "+ ADD CARD"
-      建立: "SUBMIT"
+      儲存: "SUBMIT"
 
     perfect:
       對答案時間: "SCORE:"

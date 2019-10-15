@@ -1,9 +1,24 @@
+<style>
+.dropdown-menu > a{
+  font-size: 18px;
+  color: #111;
+}
+.dropdown-menu{
+  font-size: 18px;
+  border: none;
+  background-color: #ccc;
+}
+.dropdown-menu{
+  min-width: 5rem;
+}
+.dropdown-item{
+  padding: 0;
+}
+
+</style>
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-3">
-  <% if user_signed_in? %>
-    <%= link_to "HelloWord", home_setboxes_path, class: 'navbar-brand' %>
-  <% else %>
-    <%= link_to "HelloWord", root_path, class: 'navbar-brand' %>
-  <% end %>
+  <%= link_to "HelloWord", root_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,18 +29,16 @@
       <li class="nav-item">
         <%= link_to t(".搜尋"), search_setboxes_path, class: 'nav-link' %>
       </li>     
-      </li>
-    
+    </ul>
+
+    <ul class="navbar-nav">
       <li class="nav-item">
         <%= link_to t(".建立"), new_setbox_path, class: 'nav-link' %>
       </li>
-    </ul>
-
-
-
-    <ul class="navbar-nav">
-
       <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to t(".我的學習集"), home_setboxes_path, class: 'nav-link' %>
+        </li>
         <li class="nav-item">
           <%= link_to t(".個人資料"), edit_user_registration_path, class: 'nav-link' %>
         </li>
@@ -37,11 +50,10 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <%= t('.語言') %> 
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item"><%= link_to('中文', :locale => 'zh', class: 'nav-link') %></a>
-          <a class="dropdown-item"><%= link_to('日本語', :locale => 'jp', class: 'nav-link') %></a>
-          <a class="dropdown-item"><%= link_to('English', :locale => 'en', class: 'nav-link') %></a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu p-2" aria-labelledby="navbarDropdown">
+          <%= link_to('中文', :locale => 'zh', class: 'dropdown-item') %><br>
+          <%= link_to('日本語', :locale => 'jp', class: 'dropdown-item') %><br>
+          <%= link_to('English', :locale => 'en', class: 'dropdown-item') %>
         </div>
       <% else %>
         <li class="nav-item">
@@ -54,11 +66,10 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          <%= t('.語言') %> 
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item"><%= link_to('中文', :locale => 'zh', class: 'nav-link') %></a>
-          <a class="dropdown-item"><%= link_to('日本語', :locale => 'jp', class: 'nav-link') %></a>
-          <a class="dropdown-item"><%= link_to('English', :locale => 'en', class: 'nav-link') %></a>
-          <div class="dropdown-divider"></div>
+        <div class="dropdown-menu p-2" aria-labelledby="navbarDropdown">
+          <%= link_to('中文', :locale => 'zh', class: 'dropdown-item') %><br>
+          <%= link_to('日本語', :locale => 'jp', class: 'dropdown-item') %><br>
+          <%= link_to('English', :locale => 'en', class: 'dropdown-item') %>
         </div>
       <% end %>
     
