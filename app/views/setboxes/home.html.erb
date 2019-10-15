@@ -8,7 +8,7 @@
   <div id='home'>
     <div class="row">
       <% @setbox.each do |setbox| %>
-        <div class="col-lg-6 col-sm-12 my-2">
+        <div class="col-lg-4 col-sm-12 my-2">
           <div class="card cardshadow">
             <div class="card-body border border-dark">
               <h5 class="card-title d-flex justify-content-between">
@@ -17,11 +17,11 @@
                 (<%= setbox.cards.count %>)
               </h5>
               <p class="card-text">
-                With supporting text below as a natural lead-in to additional content. 增加 migration 給學習集 description
+                <%= setbox.description %>
               </p>
               <p class="card-text text-right">
                 <small class="text-muted">
-                  Last updated 3 mins ago 抓資料庫時間
+                  <%= setbox.updated_at %>
                 </small>
               </p>
             </div>

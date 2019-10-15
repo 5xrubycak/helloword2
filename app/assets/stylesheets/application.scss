@@ -71,23 +71,11 @@
   background-color: #F0F0F0;
 }
 
-@media (max-width: 576px) {
-  .list-group{
-    flex-direction: row;
-    margin-bottom: 30px;
+@media (max-width: 767px){
+  .nested-fields{
+    margin-bottom: 25px;
   }
-  .list-group-item{
-    margin-bottom: 0px;
-  }
-  .list-group-item-action{
-    width: 20%;
-  }
-  .list-group-item:first-child{
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-  }
-  .list-group-item:last-child{
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
+  .displaynone{
+    display: none;
   }
 }
