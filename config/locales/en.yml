@@ -77,8 +77,8 @@ en:
       回列表: "Back to set list"
 
     noresult:
-      很抱歉，您搜尋的關鍵字目前找不到，: "Sorry, we don’t have any content that matches your search."
-      請改搜尋其他關鍵字，: "Please search other keywords,"
+      很抱歉，您搜尋的關鍵字目前找不到。: "Sorry, we don’t have any content that matches your search."
+      請改搜尋其他關鍵字，: "Please search other keywords, "
       或參閱其他人的學習集。: "or check others' study sets."
 
     search:

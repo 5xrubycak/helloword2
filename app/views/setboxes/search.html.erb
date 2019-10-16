@@ -32,7 +32,7 @@
               <p class="card-text text-dark">
                 <%= t('.作者') %>：<%= setbox.user.name %>
               </p>
-              <% setbox.cards.each do |card| %>
+              <% setbox.cards.sample(1).each do |card| %>
               <p class="card-text text-dark">
                 <% if params[:search].present? %>
                   <%= t('.單字：')%><%= "#{card.card_word}" %>
