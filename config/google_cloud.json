@@ -1,12 +1,13 @@
-{
-  "type": "service_account",
-  "project_id": "my-project-hello-word-253505",
-  "private_key_id": "3cec86d8d888f77e526b076b07b941960899e64d",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDM+i5LXv6tAM05\npWA7vQ1B9eggKbYMpY3SIYp7e63s//6AOY7beuOKztxbCuTH6Gs5RdFqDmSv+Ecz\nYcWInz1hkE2OZH+5Tx8Wl/d6Y3f34vejSKpzd1EhTDJZIor9PT/gKvmslCNTjGRz\nSY+nAODWQtzH8uXa1YkcbUnhhUBgcUPq0oih2dPGhyORFh5y2br3gpZYpRvMXiVi\nYEUemDuoxnlmsRzWLvSfocj1kcpjssbUN7gxJ9xu1XUR85CipcrvDg8oKVGjSar1\nv6sn+//6fCzln7mo47MezqRjHLyLpNXfvJNq+XCBk08OH/voXWOwyRw4O41oFAvg\nVvjrK/yBAgMBAAECggEAEFpbTCcRgWLhfJpdgZaVErCYKsy5GewxUtTbM/vLhe9s\ncfVlmMwGkEHtoZPOacZ4m3KfAOuSC9nucEJ6HGq73mdBUL1i1TljPQ21sD10SkIA\nyLWY56paviHSmHrhhM+Yo306OxL8eINoVixFuiifR2jBLXCK9vj3Pd3YOZZEaw0p\npEYfD/J8b8wH7dPjdIBAH1yycd97n13z6DJQdvX55jq/T6u6Bp3R768+OKtqKRIA\nI6ytHjwuE8d7mkkO2zSEMCbEN5k/MESEl9dEAibUAUY2mu2ng6PsL6Fjr/prPnA6\n8QFbcGohnxFyA7g6HSI92O9KwzA0/4p1bpfRkZua4QKBgQDzWxVNSmMpvGhHzyx0\nSAks/pSXcOmgHPXoDuuVT9PZs1fVRcU8fhfhngM/PtgtHbO8f1h64wKZfKGyT8Oa\nYcjj32vC4VjnsbNJuGOQYeeq2S5W82LFh+IqUBMdp1yeQal8ExiJFWDJTxBJtUIP\nyrlCcpu5T/e1dm7uzm6VukuO2QKBgQDXoJ5LqtHWgg45gMCxnWz1f3Z2o62aPr2w\nplBZRxIXxUU9zRiLf/pB3PZOxG2I+q8l3UQQMNOzBegYWy/hrSACw/1AiEEP8zex\nfvnxO7H1mXJ3LCwjSi+9K5YHrrJfnKG026IVp+YPmZMNUecDVK6VkabBKTDP//f1\nlEhMAsUh6QKBgQCrt0WcuDSoqo1avlE76+itmyX2hnITzNun139caGuwXeBIWWcH\nfGIVjY30/r9DdoXxKFqiu7SF4W+nhqkbMoyyXmCHrsMxGi7MghOfObZi08TjDfJQ\nN8Xa3Y3fiszLzsFtD3xsnm0hH2z61a+7vOxkesJvTIIZxWwZjghyFnZiYQKBgFUg\nWv4CbR8jbxwygWBdhxOQg6Mo0TOQy3B+6D+muDTcM47HdoY0OwdfhXnpQFkQpq7r\nIKDHtfv6O/vJnCibIYUV/NhKMm1qlrUjLOeYqpQMRU1ZCf/QnPIwz+UuicsHWiu9\nfcrQ4xmLhqt+hxYgi2APBWdCrLuhETJJnRUtDshpAoGAMrVw8uGW7QS1nd/uUQXb\nUpysR3NvVWkTbcDCLraRV5aw9ksZ7CgNLfxSyZcCMdFEUv2kuPynRLL9FOAw1X/I\nUSt+eyhXCfo8yQCOkY/ef81QLlHTmjwZwzVaHR3UtWcGr1AisY0zxnrdrQxnM502\nKu0irO/ZRtMx3m6riraUKMQ=\n-----END PRIVATE KEY-----\n",
-  "client_email": "cloud-text-to-speech@my-project-hello-word-253505.iam.gserviceaccount.com",
-  "client_id": "114329193379877935599",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-text-to-speech%40my-project-hello-word-253505.iam.gserviceaccount.com"
-}
+// {
+//   "type": "service_account",
+//   "project_id": "my-project-hello-word-253505",
+//   "private_key_id": "3cec86d8d888f77e526b076b07b941960899e64d",
+//   "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDM+i5LXv6tAM05\npWA7vQ1B9eggKbYMpY3SIYp7e63s//6AOY7beuOKztxbCuTH6Gs5RdFqDmSv+Ecz\nYcWInz1hkE2OZH+5Tx8Wl/d6Y3f34vejSKpzd1EhTDJZIor9PT/gKvmslCNTjGRz\nSY+nAODWQtzH8uXa1YkcbUnhhUBgcUPq0oih2dPGhyORFh5y2br3gpZYpRvMXiVi\nYEUemDuoxnlmsRzWLvSfocj1kcpjssbUN7gxJ9xu1XUR85CipcrvDg8oKVGjSar1\nv6sn+//6fCzln7mo47MezqRjHLyLpNXfvJNq+XCBk08OH/voXWOwyRw4O41oFAvg\nVvjrK/yBAgMBAAECggEAEFpbTCcRgWLhfJpdgZaVErCYKsy5GewxUtTbM/vLhe9s\ncfVlmMwGkEHtoZPOacZ4m3KfAOuSC9nucEJ6HGq73mdBUL1i1TljPQ21sD10SkIA\nyLWY56paviHSmHrhhM+Yo306OxL8eINoVixFuiifR2jBLXCK9vj3Pd3YOZZEaw0p\npEYfD/J8b8wH7dPjdIBAH1yycd97n13z6DJQdvX55jq/T6u6Bp3R768+OKtqKRIA\nI6ytHjwuE8d7mkkO2zSEMCbEN5k/MESEl9dEAibUAUY2mu2ng6PsL6Fjr/prPnA6\n8QFbcGohnxFyA7g6HSI92O9KwzA0/4p1bpfRkZua4QKBgQDzWxVNSmMpvGhHzyx0\nSAks/pSXcOmgHPXoDuuVT9PZs1fVRcU8fhfhngM/PtgtHbO8f1h64wKZfKGyT8Oa\nYcjj32vC4VjnsbNJuGOQYeeq2S5W82LFh+IqUBMdp1yeQal8ExiJFWDJTxBJtUIP\nyrlCcpu5T/e1dm7uzm6VukuO2QKBgQDXoJ5LqtHWgg45gMCxnWz1f3Z2o62aPr2w\nplBZRxIXxUU9zRiLf/pB3PZOxG2I+q8l3UQQMNOzBegYWy/hrSACw/1AiEEP8zex\nfvnxO7H1mXJ3LCwjSi+9K5YHrrJfnKG026IVp+YPmZMNUecDVK6VkabBKTDP//f1\nlEhMAsUh6QKBgQCrt0WcuDSoqo1avlE76+itmyX2hnITzNun139caGuwXeBIWWcH\nfGIVjY30/r9DdoXxKFqiu7SF4W+nhqkbMoyyXmCHrsMxGi7MghOfObZi08TjDfJQ\nN8Xa3Y3fiszLzsFtD3xsnm0hH2z61a+7vOxkesJvTIIZxWwZjghyFnZiYQKBgFUg\nWv4CbR8jbxwygWBdhxOQg6Mo0TOQy3B+6D+muDTcM47HdoY0OwdfhXnpQFkQpq7r\nIKDHtfv6O/vJnCibIYUV/NhKMm1qlrUjLOeYqpQMRU1ZCf/QnPIwz+UuicsHWiu9\nfcrQ4xmLhqt+hxYgi2APBWdCrLuhETJJnRUtDshpAoGAMrVw8uGW7QS1nd/uUQXb\nUpysR3NvVWkTbcDCLraRV5aw9ksZ7CgNLfxSyZcCMdFEUv2kuPynRLL9FOAw1X/I\nUSt+eyhXCfo8yQCOkY/ef81QLlHTmjwZwzVaHR3UtWcGr1AisY0zxnrdrQxnM502\nKu0irO/ZRtMx3m6riraUKMQ=\n-----END PRIVATE KEY-----\n",
+//   "client_email": "cloud-text-to-speech@my-project-hello-word-253505.iam.gserviceaccount.com",
+//   "client_id": "114329193379877935599",
+//   "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+//   "token_uri": "https://oauth2.googleapis.com/token",
+//   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+//   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-text-to-speech%40my-project-hello-word-253505.iam.gserviceaccount.com"
+// }
+// // 金鑰已失效

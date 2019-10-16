@@ -1,33 +1,61 @@
-<div class="container">
-  <div class="d-flex justify-content-between py-4">
-    <h1><%= t('.學習集列表') %> </h1>
-    <%= link_to t(".新增學習集"), new_setbox_path, class: 'btn btn-primary btn-sm py-3 px-4' %>
-  </div>
+<% if @setbox.count != 0 %>
+  <div class="container">
+    <div class="d-flex justify-content-between py-4">
+      <h1><%= t('.學習集列表') %> </h1>
+      <%= link_to t(".新增學習集"), new_setbox_path, class: 'btn btn-primary btn-sm py-3 px-4' %>
+    </div>
 
-  <%# 將此頁面用id=home綁住，是為了在show頁面時可以正常呈現 %>
-  <div id='home'>
-    <div class="row">
-      <% @setbox.each do |setbox| %>
-        <div class="col-lg-4 col-sm-12 my-2">
-          <div class="card cardshadow">
-            <div class="card-body border border-dark">
-              <h5 class="card-title d-flex justify-content-between">
-                <%# 這裡加 class:'setbox' 是為了要連結到 bindSetboxButton() %>
-                <%= link_to setbox.title, setbox_path(setbox), class:'setbox ' %>
-                (<%= setbox.cards.count %>)
-              </h5>
-              <p class="card-text">
-                <%= setbox.description %>
-              </p>
-              <p class="card-text text-right">
-                <small class="text-muted">
-                  <%= setbox.updated_at %>
-                </small>
-              </p>
+    <%# 將此頁面用id=home綁住，是為了在show頁面時可以正常呈現 %>
+    <div id='home'>
+      <div class="row">
+        <% @setbox.each do |setbox| %>
+          <div class="col-lg-4 col-sm-12 my-2">
+            <div class="card cardshadow">
+              <div class="card-body border border-dark">
+                <h5 class="card-title d-flex justify-content-between">
+                  <%# 這裡加 class:'setbox' 是為了要連結到 bindSetboxButton() %>
+                  <%= link_to setbox.title, setbox_path(setbox), class:'setbox ' %>
+                  (<%= setbox.cards.count %>)
+                </h5>
+                <p class="card-text">
+                  <%= setbox.description %>
+                </p>
+                <p class="card-text text-right">
+                  <small class="text-muted">
+                    <%= setbox.updated_at %>
+                  </small>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      <% end %> 
+        <% end %> 
+      </div>
     </div>
   </div>
-</div>
+<% else %>
+  <div class="container">
+    <div class="d-flex justify-content-between py-4">
+      <h1> <%= t('.新增學習集') %> </h1>
+    </div>
+    <%= simple_form_for(@setboxnew) do |f| %>
+      <h3>
+        <%= f.input :title , label: t(".學習集名稱"), placeholder: t('.科目，章節，單元')%>
+      </h3>
+      <p>
+        <%= f.input :description , label: "學習集敘述", placeholder: "多益幾霸昏" %>
+      </p>
+      <h4 class="mt-4"><%= t('.新增單詞') %></h4>
+      <div id='cards'>
+        <%= f.simple_fields_for :cards do |card| %>
+          <%= render 'card_fields', :f => card %>
+        <% end %>
+        <div class='links d-block text-center mt-2 small'>
+          <%= link_to_add_association t('.+ 新增單詞卡'), f, :cards, class: 'btn btn-secondary btn-lg btn-block mt-3 p-3' %>
+        </div> 
+      </div>
+      <div class="d-flex flex-row-reverse">
+        <%= f.submit t('.儲存'), class:"btn btn-sm btn-primary mt-3 py-3 px-4"%>
+      </div>
+    <% end %>
+  </div>
+<% end %>
