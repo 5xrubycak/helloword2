@@ -4,8 +4,13 @@ class Setbox < ApplicationRecord
   accepts_nested_attributes_for :cards, reject_if: :all_blank, allow_destroy: true
 
   validates :title, presence: { message: :blank} 
-  validates :title, length: { maximum: 20,
-    message: :too_long} 
+  validates :title, length: { maximum: 10,
+  message: :too_long_10}
+
+  validates :description, presence: { message: :blank} 
+  validates :description, length: { maximum: 20,
+  message: :too_long_20} 
+
 
   def self.search(search) 
     if search
@@ -14,7 +19,6 @@ class Setbox < ApplicationRecord
       all
     end
   end
-
 
 end
 
