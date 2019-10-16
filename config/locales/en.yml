@@ -76,12 +76,19 @@ en:
       新增學習集: "Create a new study set"
       回列表: "Back to set list"
 
+    noresult:
+      很抱歉，您搜尋的關鍵字目前找不到。: "Sorry, we don’t have any content that matches your search."
+      請改搜尋其他關鍵字，: "Please search other keywords, "
+      或參閱其他人的學習集。: "or check others' study sets."
+
     search:
       搜尋學習集: "Search study set"
       搜尋: "Search"
       學習集: "Study set"
       作者: "Author"
       單字：: "Term："
+      共有: "Total："
+      筆結果: " results"
 
     show:
       學習集名稱: "Study set title"

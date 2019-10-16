@@ -16,28 +16,36 @@
   </div>
 </div>
 
-<div class="bg-white">
-  <div class="container">
-    <div class="card-deck">
-      <% @setboxes.each do |setbox| %>
-        <div class="col-lg-4 col-md-6 col-sm-12 text-white p-4">
-          <div class="cardshadow p-3">
-            <h5 class="card-title text-dark">
-             <%= t('.學習集') %>：<%= link_to setbox.title, setbox_path(setbox) %>
-            </h5>
-            <p class="card-text text-dark">
-             <%= t('.作者') %>：<%= setbox.user.name %>
-            </p>
-            <% setbox.cards.each do |card| %>
+<% if @setboxes.count > 1 %>
+  <% if params[:search].present? %>
+    <h5 class="card-title text-center"><%= t('.共有') %><%= @setboxes.count %><%= t('.筆結果') %></h5>
+  <% end %>
+  <div class="bg-white">
+    <div class="container">
+      <div class="card-deck">
+        <% @setboxes.each do |setbox| %>
+          <div class="col-lg-4 col-md-6 col-sm-12 text-white p-4">
+            <div class="cardshadow p-3">
+              <h5 class="card-title text-dark">
+                <%= t('.學習集') %>：<%= link_to setbox.title, setbox_path(setbox) %>
+              </h5>
               <p class="card-text text-dark">
-              <% if params[:search].present? %>
-                <%= t('.單字：')%><%= "#{card.card_word}" %>
-              <% end %>
+                <%= t('.作者') %>：<%= setbox.user.name %>
               </p>
-            <% end %>
+              <% setbox.cards.sample(1).each do |card| %>
+              <p class="card-text text-dark">
+                <% if params[:search].present? %>
+                  <%= t('.單字：')%><%= "#{card.card_word}" %>
+                <% end %>
+              </p>
+              <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+
+<% else %>
+  <%= render 'noresult' %>
+<% end %>
