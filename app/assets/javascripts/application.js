@@ -41,3 +41,4 @@ function urlFunction() {
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
+
