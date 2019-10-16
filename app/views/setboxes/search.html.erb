@@ -1,6 +1,7 @@
 <div class="search bg-gray p-5">
   <div class="container text-center">
     <%= form_tag(search_setboxes_path, :method => "get") do %>
+    <%= hidden_field_tag :locale, I18n.locale %>
       <%= text_field_tag :search, 
           nil, 
           class: "form-control", 
@@ -29,7 +30,9 @@
             </p>
             <% setbox.cards.each do |card| %>
               <p class="card-text text-dark">
-                <%= t('單字：', card: card.card_word) if params[:search].present? %>
+              <% if params[:search].present? %>
+                <%= t('.單字：')%><%= "#{card.card_word}" %>
+              <% end %>
               </p>
             <% end %>
           </div>

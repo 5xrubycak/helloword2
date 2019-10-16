@@ -37,3 +37,7 @@ function urlFunction() {
   alert("Copied the text: " + copyText.value);
 }
 // ----------
+
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

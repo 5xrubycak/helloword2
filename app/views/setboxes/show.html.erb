@@ -2,62 +2,94 @@
   <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
 <%# QRCODE JAVASCRIPT %>
 
-<div class="container">
-  <div class="d-flex justify-content-between py-4">
+<div class="container pt-5 d-flex flex-wrap flex-lg-nowrap">
+  <div class="mr-auto">
     <h1> <%= t('.學習集名稱') %>：<%= @setbox.title %> </h1>
-      <div>
-        <button type="button" class="btn btn-primary btn-sm py-3 px-4 h1" data-toggle="modal" data-target="#exampleModalCenter">
-         <%= t('.分享') %>
-        </button>
-      </div>
+  </div>
+  <div class="">
+    <% if user_signed_in? %>
+      <%= link_to edit_setbox_path, :method => 'get',:class => "btn mr-2 btn-primary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('.編輯') do %>
+        <i class="far fa-edit"></i>
+      <% end %>
 
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="exampleModalCenterTitle"><%= t('.分享此學習集') %></h2>
+      <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
+        <i class="far fa-copy"></i>
+      <% end %>
+
+      <% if current_user.id === @setbox.user_id %>
+        <%= link_to setbox_path, :method => 'delete', :data => { :confirm => t('.確定嗎') }, :class => "btn mr-2 btn-danger",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".刪除") do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+      <% end %>
+
+    <% else %>
+      <%= link_to edit_setbox_path, :method => 'get', :class => "btn mr-2 btn-primary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('.編輯') do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+
+      <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
+        <i class="far fa-copy"></i>
+      <% end %>
+    <% end %>
+      
+    <%= link_to write_setbox_path, :method => 'post', :class => "btn mr-2 btn-secondary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".筆試") do %>
+      <i class="far fa-file-alt"></i>
+    <% end %>
+
+    <button type="button" class="btn mr-2 btn-primary" data-toggle="modal" data-target="#exampleModalCenter"% >
+      <i class="fas fa-share-alt"></i>
+    </button>
+  </div>
+  
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="exampleModalCenterTitle"><%= t('.分享此學習集') %></h2>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-9">
+              <input id="urltext" type="text" value="<%= 'https://helloword.space' + setbox_path(@setbox) %>" style="height: 100%; width:100% ">
             </div>
-            <div class="modal-body">
-              <div class="row">
-                <div class="col-9">
-                  <input id="urltext" type="text" value="<%= 'localhost:3000' + setbox_path(@setbox) %>" style="height: 100%; width:100% ">
-                </div>
-                <div class="col-3"> 
-                  <button onclick="urlFunction()"type="button" class="btn btn-warning"><%= t('.複製連結') %></button>
-                </div>
-              </div>
-              <div class="row d-flex mt-4 justify-content-center align-items-center">
-                <div id="qrcode"></div>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div class="col-3"> 
+              <button onclick="urlFunction()"type="button" class="btn btn-warning"><%= t('.複製連結') %></button>
             </div>
           </div>
+          <div class="row d-flex mt-4 justify-content-center align-items-center">
+            <div id="qrcode"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t('.關閉視窗') %></button>
         </div>
       </div>
+    </div>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-sm-3 col-lg-3 text-center">
-      <div class="list-group">
-        <a href="#" class="list-group-item list-group-item-action list-width active"><%= t('.功能') %></a>
-          <% if user_signed_in? %>
-            <%= link_to t(".筆試"), write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
-            <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
-            <%= link_to t(".複製"), copy_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action list-width" %>
-            <% if current_user.id === @setbox.user_id %>
-              <%= link_to t(".刪除"), setbox_path(@setbox), method:'delete', data: {confirm:t('.確定嗎')}, class: "list-group-item list-group-item-action list-width "%>
-            <% end %>
-          <% else %>
-            <%= link_to t(".筆試"), write_setbox_path(@setbox), method: 'post', class: "list-group-item list-group-item-action" %>
-            <%= link_to "ＰＲ", pullreq_setboxes_path, class: "list-group-item list-group-item-action list-width" %>
-            <%= link_to t(".複製"), new_setbox_path, class: "list-group-item list-group-item-action list-width" %>
-        <% end %>
-      </div>
+<div class="container">
+  <div class="row py-4">
+    <div class="col-lg-3 col-sm-12 ">
+      <h5><%= t('.最近瀏覽的學習集') %></h5>
+      <% @suggestsetbox.each do |setbox| %>
+        <div class="card cardshadow mb-3 ">
+          <div class="card-body">
+            <h5 class="card-title d-flex justify-content-between">
+              <%= link_to setbox.title, setbox_path(setbox) %>
+              (<%= setbox.cards.count %>)
+            </h5>
+            <p class="card-text text-right">
+              <small class="text-muted">
+                <%= setbox.updated_at %>
+              </small>
+            </p>
+          </div>
+        </div>
+      <% end %> 
     </div>
 
-    <div class="col-sm-9 col-lg-6">
+    <div class="col-sm-12 col-lg-6 mb-5">
       <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner cardshadow">
           <div class="carousel-item active">
@@ -105,15 +137,36 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-    </div> 
+    </div>  
+    
+    <% if current_user.id === @setbox.user_id %>
+      <div class="col-sm-12 col-lg-3 displaynone">
+      <h5><%= t('.我的其他學習集') %></h5>
+        <ul>
+          <% @currentsetbox.each do |item| %>
+            <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+    <div class="col-sm-12 col-lg-3 displaynone">
+      <h5><%= t('.該使用者的學習集') %></h5>
+        <ul>
+          <% @othersetbox.each do |item| %>
+            <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
   </div>
-  <hr class="col-12 mt-5">
 </div>
 
 <div class="bg-gray">
-  <div class="container my-5">
+  <div class="container">
     <div class="row">
-      <div class="col-12">
+      <div class="col-12 mt-5">
         <%= simple_form_for(@setbox) do |f| %>
           <div id='cards'>
             <h3 class="m-3"><%= t('.本學習集中的詞語') %> (<%= @setbox.cards.count %>) </h3>
@@ -131,6 +184,8 @@
     </div>
   </div>
 </div>
+
+<%= render 'shared/frontend/footer' %>
 
 
 <%# QRCODE JAVASCRIPT %>
