@@ -17,4 +17,8 @@
   <div class="d-flex flex-row-reverse">
     <%= f.submit t('.儲存'), class:"btn btn-sm btn-primary mt-3 py-3 px-4"%>
   </div>
+
+  <%= link_to "翻譯", lookup_setboxes_path(aa: 456, word_id: form_tag_id(f.object_name, :card_word), def_id: form_tag_id(f.object_name, :card_def)), style: 'visibility: hidden;', id: "ajax", remote: true %>
+
+
 <% end %>

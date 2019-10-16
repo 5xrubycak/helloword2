@@ -1,7 +1,12 @@
 <div class='nested-fields'>
   <div class="row">
     <div class="col-6">
-      <%= f.input :card_word, label: false, placeholder: t('.單詞：apple') %>
+
+      <%#= f.object_name %>
+
+      <%# <%= form_tag_id(f.object_name, :card_word) %> 
+
+      <%= f.input :card_word , label: false, placeholder: t('.單詞：apple') %>
     </div>
     <div class="col-5">
       <%= f.input :card_def, label: false, placeholder: t('.定義：蘋果') %>
@@ -11,3 +16,19 @@
     </div>
   </div>
 </div>
+
+
+<script>
+$( document ).ready(function() {
+  const card_word_id = '<%= form_tag_id(f.object_name, :card_word) %>';
+  const card_def_id = '<%= form_tag_id(f.object_name, :card_def) %>';
+  const card_word = document.querySelector(`#${card_word_id}`);
+
+  card_word.addEventListener('blur', () => {
+    document.querySelector('#ajax').href = `/helloword/lookup?aa=${card_word.value}&def_id=${card_def_id}&word_id=${card_word_id}`;
+    document.querySelector('#ajax').click();
+  });
+
+});
+</script>
+

@@ -1,4 +1,5 @@
 class SetboxesController < ApplicationController
+  include SetboxesHelper
   # protect_from_forgery with: :null_session, only: [:json]
   # 錯誤的方法 下面的才是對的
   skip_before_action :verify_authenticity_token
@@ -13,6 +14,11 @@ class SetboxesController < ApplicationController
 
   def new
     @setbox = Setbox.new
+    @card_text = params[:aa]
+    @card_def_id = form_tag_id(@setbox, :card_word)
+
+    # @result = translate_text(@card_text).text
+    # byebug 
   end
 
   def create
@@ -40,6 +46,18 @@ class SetboxesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def lookup
+    # @setbox = Setbox.new
+    @def_id = params[:def_id]
+    @word_id = params[:word_id]
+    @card_text = params[:aa]
+    @result = translate_text(@card_text).text
+    # @object_name = sanitized_object_name(@setbox)
+    # @card_def_id = form_tag_id(, :card_word)
+    # debugger
+    # byebug
   end
 
   def copy

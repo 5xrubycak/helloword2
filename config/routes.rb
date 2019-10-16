@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get '/home' ,to: 'setboxes#home'
       get '/search', to: 'setboxes#search'
       get '/pullreq', to: 'setboxes#pullreq'
+      get '/lookup', to: 'setboxes#lookup'
       get '/noresult', to: 'setboxes#noresult'
     end
     member do

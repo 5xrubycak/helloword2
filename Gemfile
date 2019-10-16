@@ -25,7 +25,10 @@ gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'faker', '~> 2.4'
 gem 'hirb-unicode'
 gem 'rack-cors', '~> 1.0', '>= 1.0.3'
+gem 'google-cloud-translate', '~> 1.4'
+gem 'google-cloud', '~> 0.62.0'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
