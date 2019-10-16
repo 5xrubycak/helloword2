@@ -19,7 +19,7 @@
  @import "font-awesome";
 
  body,html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'NotoSansCJKtc-Regular';
  } 
 
 .signinoutbg,.editbg {
@@ -79,4 +79,9 @@
   .displaynone{
     display: none;
   }
+}
+
+@font-face {
+  font-family: 'NotoSansCJKtc-Regular';
+  src: url('/assets/NotoSansCJKtc-Regular.otf') ;
 }

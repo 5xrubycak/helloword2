@@ -5,6 +5,4 @@ class Card < ApplicationRecord
   validates :card_word, :card_def, length: { maximum: 20,
   message: :too_long_20}
 
-
-
 end

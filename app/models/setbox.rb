@@ -11,6 +11,7 @@ class Setbox < ApplicationRecord
   validates :description, length: { maximum: 20,
   message: :too_long_20} 
 
+
   def self.search(search) 
     if search
       where(['title LIKE ? OR cards.card_word LIKE ? OR cards.card_def LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"]) 
