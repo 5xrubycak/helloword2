@@ -153,3 +153,10 @@ zh:
         信箱: "信箱"
         密碼: "密碼"
         註冊: "註冊"
+
+  errors:
+    messages:
+      blank: "不可以空白喔！"
+      too_long: "最長不能超過20個字元喔！"
+
+      # invalid: "%{attribute} isn't valid"
