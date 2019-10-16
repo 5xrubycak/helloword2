@@ -27,13 +27,12 @@ class SetboxesController < ApplicationController
 
   def show
     if user_signed_in?
-      @currentsetbox = current_user.setboxes.sample(3).uniq
+      @currentsetbox = current_user.setboxes.sample(5).uniq
       @othersetbox = Setbox.where.not(user_id: current_user.id).sample(5).uniq
-      @suggestsetbox = current_user.setboxes.sample(3).uniq
+      @suggestsetbox = current_user.setboxes.sample(2).uniq
     else
-      @suggestsetbox = Setbox.all.sample(3).uniq
-      @othersetbox = Setbox.all.sample(3).uniq
-      # Setbox.where.not(user_id: current_user.id).sample(5).uniq
+      @othersetbox = Setbox.all.sample(5).uniq
+      @suggestsetbox = Setbox.all.sample(2).uniq
     end
   end
 
