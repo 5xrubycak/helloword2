@@ -8,37 +8,35 @@
   </div>
   <div class="">
     <% if user_signed_in? %>
-      <%= link_to edit_setbox_path, :method => 'get',:class => "btn mr-2 btn-primary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('.編輯') do %>
-        <i class="far fa-edit"></i>
-      <% end %>
-
-      <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
-        <i class="far fa-copy"></i>
-      <% end %>
-
       <% if current_user.id === @setbox.user_id %>
+        <%= link_to edit_setbox_path, :method => 'get',:class => "btn mr-2 btn-primary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('.編輯') do %>
+          <i class="far fa-edit"></i>
+        <% end %>
         <%= link_to setbox_path, :method => 'delete', :data => { :confirm => t('.確定嗎') }, :class => "btn mr-2 btn-danger",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".刪除") do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
+        <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
+          <i class="far fa-copy"></i>
+        <% end %>
       <% end %>
+
+      <%= link_to write_setbox_path, :method => 'post', :class => "btn mr-2 btn-secondary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".筆試") do %>
+        <i class="far fa-file-alt"></i>
+      <% end %>
+
+      <button type="button" class="btn mr-2 btn-primary" data-toggle="modal" data-target="#exampleModalCenter"% >
+        <i class="fas fa-share-alt"></i>
+      </button>
 
     <% else %>
-      <%= link_to edit_setbox_path, :method => 'get', :class => "btn mr-2 btn-primary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t('.編輯') do %>
-        <i class="far fa-edit"></i>
+      <%= link_to write_setbox_path, :method => 'post', :class => "btn mr-2 btn-secondary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".筆試") do %>
+        <i class="far fa-file-alt"></i>
       <% end %>
 
-      <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
-        <i class="far fa-copy"></i>
-      <% end %>
+      <button type="button" class="btn mr-2 btn-primary" data-toggle="modal" data-target="#exampleModalCenter"% >
+        <i class="fas fa-share-alt"></i>
+      </button>
     <% end %>
-      
-    <%= link_to write_setbox_path, :method => 'post', :class => "btn mr-2 btn-secondary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".筆試") do %>
-      <i class="far fa-file-alt"></i>
-    <% end %>
-
-    <button type="button" class="btn mr-2 btn-primary" data-toggle="modal" data-target="#exampleModalCenter"% >
-      <i class="fas fa-share-alt"></i>
-    </button>
   </div>
   
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
