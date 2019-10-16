@@ -14,7 +14,7 @@ class Setbox < ApplicationRecord
 
   def self.search(search) 
     if search
-      where(['title LIKE ? OR cards.card_word LIKE ? OR cards.card_def LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"]) 
+      where(['title LIKE ? OR cards.card_word LIKE ? OR cards.card_def LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])  
     else
       all
     end

@@ -75,8 +75,7 @@ class SetboxesController < ApplicationController
 
   def search
     @setboxes = Setbox.joins(:cards, :user).includes(:cards, :user).search(params[:search]).sample(9)
-    return @setboxes if @setboxes.count >= 1
-    redirect_to noresult_setboxes_path
+    @othersetbox = Setbox.joins(:cards, :user).includes(:cards, :user).sample(9)
   end
 
   def noresult

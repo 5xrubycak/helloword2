@@ -1,0 +1,34 @@
+
+<div class="container">
+  <div class="row">
+      <div>
+        <h2><%= t('.很抱歉，您搜尋的關鍵字目前找不到，') %> </h2>
+      </div>
+      <div>
+        <h2><%= t('.請改搜尋其他關鍵字，') %> </h2>
+      </div>
+      <div>
+        <h2><%= t('.或參閱其他人的學習集。') %> </h2>
+      </div>
+      <div>
+        <div class="bg-white mb-5">
+          <div class="container">
+            <div class="card-deck">
+            <% @othersetbox.each do |setbox| %>
+                <div class="col-lg-4 col-md-12 text-white p-4">
+                <div class="cardshadow p-3">
+                    <h5 class="card-title text-dark">
+                    <%= t('.學習集') %>：<%= link_to setbox.title, setbox_path(setbox) %>
+                    </h5>
+                    <p class="card-text text-dark">
+                    <%= t('.作者') %>：<%= setbox.user.name %>
+                    </p>
+                </div>
+                </div>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
