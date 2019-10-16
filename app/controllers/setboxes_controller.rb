@@ -5,7 +5,7 @@ class SetboxesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   before_action :find_setbox, only: [:show, :edit, :update, :write, :judge]
-  before_action :check_login, only: [:new, :create, :edit, :update, :destroy]
+  before_action :check_login, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def index
     @setbox = Setbox.all
@@ -35,6 +35,12 @@ class SetboxesController < ApplicationController
     @currentsetbox = current_user.setboxes.sample(5).uniq
     @othersetbox = Setbox.where.not(user_id: current_user.id).sample(5).uniq
     @suggestsetbox = current_user.setboxes.sample(2).uniq
+
+    # findid = Setbox.find(params[:id]).user_id
+    # @current_user = User.find(findid)
+    # @currentsetbox = User.find(findid).setboxes.sample(5).uniq
+    # @othersetbox = Setbox.where.not(user_id: params[:id]).sample(5).uniq
+    # @suggestsetbox = User.find(findid).setboxes.sample(2).uniq
   end
 
   def edit
