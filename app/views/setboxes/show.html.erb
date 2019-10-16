@@ -149,7 +149,7 @@
       </div>
     <% else %>
     <div class="col-sm-12 col-lg-3 displaynone">
-      <h5><%= t('.其他使用者的學習集') %></h5>
+      <h5><%= t('.該使用者的學習集') %></h5>
         <ul>
           <% @othersetbox.each do |item| %>
             <li class="p-2"><%= link_to item.title, setbox_path(item.id) %></li>
