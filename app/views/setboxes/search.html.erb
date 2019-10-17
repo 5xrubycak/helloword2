@@ -15,7 +15,7 @@
   </div>
 </div>
 
-<% if @setboxes.count > 1 %>
+<% if @setboxes.count >= 1 %>
   <% if params[:search].present? %>
     <h5 class="card-title text-center"><%= t('.共有') %><%= @setboxes.count %><%= t('.筆結果') %></h5>
   <% end %>
