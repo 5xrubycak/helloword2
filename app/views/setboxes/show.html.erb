@@ -15,9 +15,10 @@
         <%= link_to setbox_path, :method => 'delete', :data => { :confirm => t('.確定嗎') }, :class => "btn mr-2 btn-danger",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".刪除") do %>
           <i class="far fa-trash-alt"></i>
         <% end %>
-        <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
-          <i class="far fa-copy"></i>
-        <% end %>
+      <% end %>
+
+      <%= link_to copy_setbox_path, :method => 'post', :class => "btn mr-2 btn-success",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".複製") do %>
+        <i class="far fa-copy"></i>
       <% end %>
 
       <%= link_to write_setbox_path, :method => 'post', :class => "btn mr-2 btn-secondary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".筆試") do %>
@@ -27,12 +28,10 @@
       <button type="button" class="btn mr-2 btn-primary" data-toggle="modal" data-target="#exampleModalCenter"% >
         <i class="fas fa-share-alt"></i>
       </button>
-
     <% else %>
       <%= link_to write_setbox_path, :method => 'post', :class => "btn mr-2 btn-secondary",'data-toggle' => 'tooltip', 'data-placement' => 'bottom', 'title' => t(".筆試") do %>
         <i class="far fa-file-alt"></i>
       <% end %>
-
       <button type="button" class="btn mr-2 btn-primary" data-toggle="modal" data-target="#exampleModalCenter"% >
         <i class="fas fa-share-alt"></i>
       </button>
@@ -79,7 +78,7 @@
             </h5>
             <p class="card-text text-right">
               <small class="text-muted">
-                <%= setbox.updated_at %>
+                <%= setbox.updated_at.to_s(:long_ordinal) %>
               </small>
             </p>
           </div>
