@@ -127,6 +127,7 @@ jp:
         登入: "ログイン"
         語言: "言語"
         我的學習集: "マイ学習セット"
+        搜尋學習集: "学習セットを検索する"
 
   users:
     registrations:
@@ -176,3 +177,15 @@ jp:
       too_long_10: "長すぎます (最大10文字)" 
       too_long_20: "長すぎます (最大20文字)" 
 
+  controllers:
+    setboxes:
+      copy: 
+        副本: "のコピー"
+      destroy:
+        刪除資料: "セットは削除されました"
+
+  attributes:
+    title: ""
+    description: ""
+    card_word: ""
+    card_def: ""
