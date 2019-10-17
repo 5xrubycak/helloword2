@@ -85,3 +85,7 @@
   font-family: 'NotoSansCJKtc-Regular';
   src: url('/assets/NotoSansCJKtc-Regular.otf') ;
 }
+
+abbr[title="required"] {
+  display: none;
+}
