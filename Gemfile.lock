@@ -440,7 +440,7 @@ GEM
       faraday (~> 0.9)
       jwt (>= 1.5, < 3.0)
       multi_json (~> 1.10)
-    simple_form (4.1.0)
+    simple_form (5.0.1)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     spring (2.1.0)
@@ -498,9 +498,9 @@ DEPENDENCIES
   dotenv-rails (~> 2.1)
   faker (~> 2.4)
   figaro (~> 1.1, >= 1.1.1)
+  font-awesome-rails (~> 4.7, >= 4.7.0.5)
   google-cloud (~> 0.62.0)
   google-cloud-translate (~> 1.4)
-  font-awesome-rails (~> 4.7, >= 4.7.0.5)
   hirb-unicode
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.5)
@@ -514,7 +514,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   sass-rails (~> 5.0)
   selenium-webdriver
-  simple_form (~> 4.1)
+  simple_form (>= 5.0.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
