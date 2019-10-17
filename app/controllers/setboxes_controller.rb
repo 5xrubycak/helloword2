@@ -99,9 +99,6 @@ class SetboxesController < ApplicationController
     @othersetbox = Setbox.joins(:cards, :user).includes(:cards, :user).sample(9)
   end
 
-  def noresult
-  end
-
   def pullreq
     @setboxes = Setbox.joins(:cards).includes(:cards).sample(1)
   end
