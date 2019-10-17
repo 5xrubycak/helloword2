@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.3'
-gem 'simple_form', '~> 4.1'
+gem "simple_form", ">= 5.0.0"
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'omniauth-facebook', '~> 5.0'
 gem 'omniauth', '~> 1.9'
