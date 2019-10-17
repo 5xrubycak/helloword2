@@ -177,7 +177,7 @@ zh:
   controllers:
     setboxes:
       copy: 
-        副本: "副本"
+        _副本: "_副本"
       destroy:
         刪除資料: "刪除資料"
 

@@ -180,7 +180,7 @@ en:
   controllers:
     setboxes:
       copy: 
-        副本: "-copy"
+        _副本: "_copy"
       destroy:
         刪除資料: "Set has been deleted"
 

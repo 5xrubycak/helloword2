@@ -180,7 +180,7 @@ jp:
   controllers:
     setboxes:
       copy: 
-        副本: "のコピー"
+        _副本: "のコピー"
       destroy:
         刪除資料: "セットは削除されました"
 
