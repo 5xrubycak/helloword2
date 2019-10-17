@@ -18,11 +18,11 @@
                   (<%= setbox.cards.count %>)
                 </h5>
                 <p class="card-text">
-                  <%= setbox.description %>
+                  <%= t(".描述")%>：<%= setbox.description %>
                 </p>
                 <p class="card-text text-right">
                   <small class="text-muted">
-                    <%= setbox.updated_at %>
+                    <%= setbox.updated_at.to_s(:long_ordinal) %>
                   </small>
                 </p>
               </div>
