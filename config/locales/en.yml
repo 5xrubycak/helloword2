@@ -173,7 +173,7 @@ en:
   errors:
     messages:
       blank: "can't be blank"
-      too_long_10: "10 characters is the maximum allowed"
+      too_long_15: "15 characters is the maximum allowed"
       too_long_20: "20 characters is the maximum allowed"
       # invalid: "%{attribute} isn't valid" 
 

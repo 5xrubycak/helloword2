@@ -174,7 +174,7 @@ jp:
   errors:
     messages:
       blank: "空欄にはできません"
-      too_long_10: "長すぎます (最大10文字)" 
+      too_long_15: "長すぎます (最大15文字)" 
       too_long_20: "長すぎます (最大20文字)" 
 
   controllers:

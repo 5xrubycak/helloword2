@@ -171,7 +171,7 @@ zh:
   errors:
     messages:
       blank: "不可以空白喔！"
-      too_long_10: "最長不能超過10個字元喔！"
+      too_long_15: "最長不能超過15個字元喔！"
       too_long_20: "最長不能超過20個字元喔！"
 zh:
   controllers:
