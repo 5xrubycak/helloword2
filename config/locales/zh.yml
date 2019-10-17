@@ -79,7 +79,7 @@ zh:
     noresult:
       很抱歉，您搜尋的關鍵字目前找不到。: "很抱歉，您搜尋的關鍵字目前找不到。"
       請改搜尋其他關鍵字，: "請改搜尋其他關鍵字，"
-      或參閱其他人的學習集。: "或參閱其他人的學習集。"
+      或繼續瀏覽其他學習集。: "或繼續瀏覽其他學習集。"
 
     search:
       搜尋學習集: "搜尋學習集"
@@ -124,6 +124,7 @@ zh:
         登入: "登入"
         語言: "語言"
         我的學習集: "我的學習集"
+        搜尋學習集: "搜尋學習集"
 
   users:
     registrations:
@@ -170,6 +171,18 @@ zh:
   errors:
     messages:
       blank: "不可以空白喔！"
-      too_long_10: "最長不能超過10個字元喔！"
+      too_long_15: "最長不能超過15個字元喔！"
       too_long_20: "最長不能超過20個字元喔！"
 
+  controllers:
+    setboxes:
+      copy: 
+        _副本: "_副本"
+      destroy:
+        刪除資料: "刪除資料"
+
+  attributes:
+    title: ""
+    description: ""
+    card_word: ""
+    card_def: ""

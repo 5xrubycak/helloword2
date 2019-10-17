@@ -69,16 +69,16 @@ class SetboxesController < ApplicationController
   def copy
     @setbox = Setbox.find_by(id: params[:id])
     @dup_setbox = @setbox.dup
-    new_title = @setbox.dup.title + "-副本"
+    new_title = @setbox.title + t("controllers.setboxes.copy._副本")
     @dup_setbox.title = new_title
     @dup_setbox.save
     @setbox.cards.each do |card|
-    dup_card = card.dup
-    dup_card.setbox_id = Setbox.last.id
-    dup_card.save
-    @dup_setbox.user_id = current_user.id
-    @dup_setbox.save
-    end
+      dup_card = card.dup
+      dup_card.setbox_id = @dup_setbox.id
+      dup_card.save
+      @dup_setbox.user_id = current_user.id
+      @dup_setbox.save
+  end
     
     redirect_to home_setboxes_path, notice: "複製 #{@setbox.title}成功"
   end
@@ -97,9 +97,6 @@ class SetboxesController < ApplicationController
   def search
     @setboxes = Setbox.joins(:cards, :user).includes(:cards, :user).search(params[:search]).sample(9)
     @othersetbox = Setbox.joins(:cards, :user).includes(:cards, :user).sample(9)
-  end
-
-  def noresult
   end
 
   def pullreq

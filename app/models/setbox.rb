@@ -4,8 +4,8 @@ class Setbox < ApplicationRecord
   accepts_nested_attributes_for :cards, reject_if: :all_blank, allow_destroy: true
 
   validates :title, presence: { message: :blank} 
-  validates :title, length: { maximum: 10,
-  message: :too_long_10}
+  validates :title, length: { maximum: 15,
+  message: :too_long_15}
 
   validates :description, presence: { message: :blank} 
   validates :description, length: { maximum: 20,

@@ -79,7 +79,7 @@ en:
     noresult:
       很抱歉，您搜尋的關鍵字目前找不到。: "Sorry, we don’t have any content that matches your search."
       請改搜尋其他關鍵字，: "Please search other keywords, "
-      或參閱其他人的學習集。: "or check others' study sets."
+      或繼續瀏覽其他學習集。: "or check others' study sets."
 
     search:
       搜尋學習集: "Search study set"
@@ -123,7 +123,8 @@ en:
         註冊: "Register"
         登入: "Sign_in"
         語言: "Language"
-        我的學習集: "My study set"
+        我的學習集: "My sets"
+        搜尋學習集: "Search"
 
 
   users:
@@ -172,7 +173,19 @@ en:
   errors:
     messages:
       blank: "can't be blank"
-      too_long_10: "10 characters is the maximum allowed"
+      too_long_15: "15 characters is the maximum allowed"
       too_long_20: "20 characters is the maximum allowed"
       # invalid: "%{attribute} isn't valid" 
 
+  controllers:
+    setboxes:
+      copy: 
+        _副本: "_copy"
+      destroy:
+        刪除資料: "Set has been deleted"
+
+  attributes:
+    title: "Title"
+    description: "Description"
+    card_word: "Term"
+    card_def: "Definition"
