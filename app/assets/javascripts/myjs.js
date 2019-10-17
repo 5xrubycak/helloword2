@@ -31,18 +31,21 @@ function speak(targetLang, targetSpeaker, inputTxt){
   
 function bindButton() {
   document.querySelectorAll('.chinese').forEach((btn, index) => {
-    btn.addEventListener('click', (event) => {
-      const id = event.target.tagName.toLowerCase() != 'button' ? event.target.parentNode.value : event.target.value;
+    btn.addEventListener('click', function(event){
+      const id = this.value;
       const value = document.querySelector(`#chinese-${id}`).innerText;
       speak('zh-TW', 'Mei-Jia', value);
+      // const id = event.target.tagName.toLowerCase() != 'button' ? event.target.parentNode.value : event.target.value;
+      // const value = document.querySelector(`#chinese-${id}`).innerText;
+      // speak('zh-TW', 'Mei-Jia', value);
     }, false);
   })
 
   document.querySelectorAll('.english').forEach((btn, index) => {
-    btn.addEventListener('click', (event) => {
-      const id = event.target.tagName.toLowerCase() != 'button' ? event.target.parentNode.value : event.target.value;
+    btn.addEventListener('click', function(event) {
+      const id = this.value;
       const value = document.querySelector(`#english-${id}`).innerText;
       speak('en-US', 'Alex', value);
-  }, false);
+    }, false);
   })
 }  
