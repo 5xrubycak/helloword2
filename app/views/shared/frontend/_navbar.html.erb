@@ -35,7 +35,7 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <%= form_tag(search_setboxes_path, :method => "get") do %>
+        <%= form_tag(search_setboxes_path, :method => "get", :class => 'd-flex') do %>
         <%= hidden_field_tag :locale, I18n.locale %>
           <%= text_field_tag :search, 
           nil, 

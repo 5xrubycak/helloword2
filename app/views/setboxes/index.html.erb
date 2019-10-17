@@ -35,12 +35,11 @@
 
 <div class="search bg-gray p-5">
   <div class="container text-center">
-    <%= form_tag(search_setboxes_path, :method => "get") do %>
+    <%= form_tag(search_setboxes_path, :method => :get, :class => 'd-flex') do %>
       <%= text_field_tag :search, 
           nil, 
           class: "form-control", 
-          placeholder: t(".搜尋學習集"), 
-          style: "display:inline-block;width:75%;" 
+          placeholder: t(".搜尋學習集")
       %> 
       <%= submit_tag t(".搜尋"),
           :name => nil,
