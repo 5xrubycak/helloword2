@@ -40,7 +40,7 @@ en:
 
     form:
       學習集名稱: "Study set title"
-      科目，章節，單元: "Subject, Chapter, Uit"
+      科目、章節、單元: "Subject, Chapter, Uit"
       新增單詞: "Add new term"
       + 新增單詞卡: "+ Add card"
       儲存: "Save"
@@ -51,14 +51,14 @@ en:
       幾霸昏！: "PERFECT SCORE!"
       沒有最好只有更好，繼續加油！: "KEEP ON GOING!"
       重新挑戰: "TRY AGAIN"
-      回單詞卡列表: "RETURN TO CARD LIST"
+      回單詞卡列表: "RETURN TO SET"
 
     unperfect:
       這題寫錯囉！: "Incorrect!"
 
     edit:
       編輯學習集: "Edit study set"
-      回列表: "Back to study list"
+      返回: "Back"
 
     home:
       學習集列表: "Study set list"
@@ -79,7 +79,7 @@ en:
     noresult:
       很抱歉，您搜尋的關鍵字目前找不到。: "Sorry, we don’t have any content that matches your search."
       請改搜尋其他關鍵字，: "Please search other keywords, "
-      或繼續瀏覽其他學習集。: "or check others' study sets."
+      或繼續瀏覽其他學習集。: "or check other study sets."
 
     search:
       搜尋學習集: "Search study set"

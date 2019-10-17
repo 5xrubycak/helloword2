@@ -35,8 +35,20 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item">
-        <%= link_to t(".搜尋"), search_setboxes_path, class: 'nav-link' %>
-      </li>     
+        <%= form_tag(search_setboxes_path, :method => "get", :class => 'd-flex') do %>
+        <%= hidden_field_tag :locale, I18n.locale %>
+          <%= text_field_tag :search, 
+          nil, 
+          class: "form-control", 
+          placeholder: t(".搜尋學習集"), 
+          style: "display:inline-block;width:75%;" 
+          %> 
+          <%= submit_tag t(".搜尋"),
+          :name => nil,
+          class: "btn btn-outline-light"
+          %> 
+        <% end %> 
+      </li>          
     </ul>
 
     <ul class="navbar-nav">
