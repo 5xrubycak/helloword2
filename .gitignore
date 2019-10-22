@@ -33,4 +33,5 @@
 # Ignore application configuration
 /config/application.yml
 /config/google_cloud.json
-/config/google_cloud_translate.json
+/config/google-credentials.json
+/config/cloud_translate.json
