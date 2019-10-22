@@ -34,3 +34,4 @@
 /config/application.yml
 /config/google_cloud.json
 /config/google-credentials.json
+/config/cloud_translate.json
